@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_facet_grid &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_gantt" href="plotly.figure_factory.create_gantt.html" />
+    <link rel="prev" title="plotly.figure_factory.create_distplot" href="plotly.figure_factory.create_distplot.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_distplot.html" title="Previous Chapter: plotly.figure_factory.create_distplot"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_gantt.html" title="Next Chapter: plotly.figure_factory.create_gantt"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-facet-grid">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid<a class="headerlink" href="#plotly-figure-factory-create-facet-grid" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_facet_grid">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_facet_grid</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">x=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">facet_row=None</em>, <em class="sig-param">facet_col=None</em>, <em class="sig-param">color_name=None</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">color_is_cat=False</em>, <em class="sig-param">facet_row_labels=None</em>, <em class="sig-param">facet_col_labels=None</em>, <em class="sig-param">height=None</em>, <em class="sig-param">width=None</em>, <em class="sig-param">trace_type='scatter'</em>, <em class="sig-param">scales='fixed'</em>, <em class="sig-param">dtick_x=None</em>, <em class="sig-param">dtick_y=None</em>, <em class="sig-param">show_boxes=True</em>, <em class="sig-param">ggplot2=False</em>, <em class="sig-param">binsize=1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_facet_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns figure for facet grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>(</em><em>pd.DataFrame</em><em>)</em>) – the dataframe of columns for the facet grid.</p></li>
+<li><p><strong>x</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the name of the dataframe column for the x axis data.</p></li>
+<li><p><strong>y</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the name of the dataframe column for the y axis data.</p></li>
+<li><p><strong>facet_row</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the name of the dataframe column that is used to
+facet the grid into row panels.</p></li>
+<li><p><strong>facet_col</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the name of the dataframe column that is used to
+facet the grid into column panels.</p></li>
+<li><p><strong>color_name</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the name of your dataframe column that will
+function as the colormap variable.</p></li>
+<li><p><strong>colormap</strong> (<em>(</em><em>str|list|dict</em><em>)</em>) – the param that determines how the
+color_name column colors the data. If the dataframe contains numeric
+data, then a dictionary of colors will group the data categorically
+while a Plotly Colorscale name or a custom colorscale will treat it
+numerically. To learn more about colors and types of colormap, run
+<code class="docutils literal notranslate"><span class="pre">help(plotly.colors)</span></code>.</p></li>
+<li><p><strong>color_is_cat</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – <p>determines whether a numerical column for the
+colormap will be treated as categorical (True) or sequential (False).</p>
+<blockquote>
+<div><p>Default = False.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>facet_row_labels</strong> (<em>(</em><em>str|dict</em><em>)</em>) – set to either ‘name’ or a dictionary
+of all the unique values in the faceting row mapped to some text to
+show up in the label annotations. If None, labeling works like usual.</p></li>
+<li><p><strong>facet_col_labels</strong> (<em>(</em><em>str|dict</em><em>)</em>) – set to either ‘name’ or a dictionary
+of all the values in the faceting row mapped to some text to show up
+in the label annotations. If None, labeling works like usual.</p></li>
+<li><p><strong>height</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>)</em>) – the height of the facet grid figure.</p></li>
+<li><p><strong>width</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>)</em>) – the width of the facet grid figure.</p></li>
+<li><p><strong>trace_type</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – decides the type of plot to appear in the
+facet grid. The options are ‘scatter’, ‘scattergl’, ‘histogram’,
+‘bar’, and ‘box’.
+Default = ‘scatter’.</p></li>
+<li><p><strong>scales</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – determines if axes have fixed ranges or not. Valid
+settings are ‘fixed’ (all axes fixed), ‘free_x’ (x axis free only),
+‘free_y’ (y axis free only) or ‘free’ (both axes free).</p></li>
+<li><p><strong>dtick_x</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – determines the distance between each tick on the
+x-axis. Default is None which means dtick_x is set automatically.</p></li>
+<li><p><strong>dtick_y</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – determines the distance between each tick on the
+y-axis. Default is None which means dtick_y is set automatically.</p></li>
+<li><p><strong>show_boxes</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – draws grey boxes behind the facet titles.</p></li>
+<li><p><strong>ggplot2</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – draws the facet grid in the style of <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. See
+<a class="reference external" href="http://ggplot2.tidyverse.org/reference/facet_grid.html">http://ggplot2.tidyverse.org/reference/facet_grid.html</a> for reference.
+Default = False</p></li>
+<li><p><strong>binsize</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>)</em>) – groups all data into bins of a given length.</p></li>
+<li><p><strong>kwargs</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>)</em>) – a dictionary of scatterplot arguments.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examples 1: One Way Faceting
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>mpg = pd.read_table(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt">https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>mpg,
+x=’displ’,
+y=’cty’,
+facet_col=’cyl’,</p>
+</dd>
+</dl>
+<p>)
+py.iplot(fig, filename=’facet_grid_mpg_one_way_facet’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Two Way Faceting
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>mpg = pd.read_table(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt">https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>mpg,
+x=’displ’,
+y=’cty’,
+facet_row=’drv’,
+facet_col=’cyl’,</p>
+</dd>
+</dl>
+<p>)
+py.iplot(fig, filename=’facet_grid_mpg_two_way_facet’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Categorical Coloring
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>mpg = pd.read_table(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt">https://raw.githubusercontent.com/plotly/datasets/master/mpg_2017.txt</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>mtcars,
+x=’mpg’,
+y=’wt’,
+facet_col=’cyl’,
+color_name=’cyl’,
+color_is_cat=True,</p>
+</dd>
+</dl>
+<p>)
+py.iplot(fig, filename=’facet_grid_mpg_default_colors’)
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+<p>Example 4: Sequential Coloring
+<a href="#id19"><span class="problematic" id="id20">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>tips = pd.read_csv(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/tips.csv">https://raw.githubusercontent.com/plotly/datasets/master/tips.csv</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>tips,
+x=’total_bill’,
+y=’tip’,
+facet_row=’sex’,
+facet_col=’smoker’,
+color_name=’size’,
+colormap=’Viridis’,</p>
+</dd>
+</dl>
+<p>)
+py.iplot(fig, filename=’facet_grid_tips_sequential_colors’)
+<a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<p>Example 5: Custom labels
+<a href="#id25"><span class="problematic" id="id26">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>mtcars = pd.read_csv(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv">https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>mtcars,
+x=’wt’,
+y=’mpg’,
+facet_col=’cyl’,
+facet_col_labels={4: “$alpha$”, 6: ‘$beta$’, 8: ‘$sqrt[y]{x}$’},</p>
+</dd>
+</dl>
+<p>)</p>
+<p>py.iplot(fig, filename=’facet_grid_mtcars_custom_labels’)
+<a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">`</span></a></p>
+<p>Example 6: Other Trace Type
+<a href="#id31"><span class="problematic" id="id32">``</span></a>`
+import plotly.plotly as py
+import plotly.figure_factory as ff</p>
+<p>import pandas as pd</p>
+<p>mtcars = pd.read_csv(‘<a class="reference external" href="https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv">https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv</a>’)</p>
+<dl class="simple">
+<dt>fig = ff.create_facet_grid(</dt><dd><p>mtcars,
+x=’wt’,
+facet_col=’cyl’,
+trace_type=’histogram’,</p>
+</dd>
+</dl>
+<p>)</p>
+<p>py.iplot(fig, filename=’facet_grid_mtcars_other_trace_type’)
+<a href="#id33"><span class="problematic" id="id34">``</span></a><a href="#id35"><span class="problematic" id="id36">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

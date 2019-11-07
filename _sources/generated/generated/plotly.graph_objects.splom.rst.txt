@@ -1,0 +1,28 @@
+plotly.graph\_objects.splom
+===========================
+
+.. automodule:: plotly.graph_objects.splom
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Diagonal
+      Dimension
+      Hoverlabel
+      Marker
+      Selected
+      Stream
+      Unselected
+   
+   
+
+   
+   
+   

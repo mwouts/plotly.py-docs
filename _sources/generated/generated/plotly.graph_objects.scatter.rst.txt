@@ -1,0 +1,30 @@
+plotly.graph\_objects.scatter
+=============================
+
+.. automodule:: plotly.graph_objects.scatter
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ErrorX
+      ErrorY
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

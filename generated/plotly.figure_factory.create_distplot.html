@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_distplot &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_facet_grid" href="plotly.figure_factory.create_facet_grid.html" />
+    <link rel="prev" title="plotly.figure_factory.create_dendrogram" href="plotly.figure_factory.create_dendrogram.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_dendrogram.html" title="Previous Chapter: plotly.figure_factory.create_dendrogram"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_facet_grid.html" title="Next Chapter: plotly.figure_factory.create_facet_grid"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-distplot">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot<a class="headerlink" href="#plotly-figure-factory-create-distplot" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_distplot">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_distplot</code><span class="sig-paren">(</span><em class="sig-param">hist_data</em>, <em class="sig-param">group_labels</em>, <em class="sig-param">bin_size=1.0</em>, <em class="sig-param">curve_type='kde'</em>, <em class="sig-param">colors=None</em>, <em class="sig-param">rug_text=None</em>, <em class="sig-param">histnorm='probability density'</em>, <em class="sig-param">show_hist=True</em>, <em class="sig-param">show_curve=True</em>, <em class="sig-param">show_rug=True</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_distplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>BETA function that creates a distplot similar to seaborn.distplot</p>
+<p>The distplot can be composed of all or any combination of the following
+3 components: (1) histogram, (2) curve: (a) kernel density estimation
+or (b) normal curve, and (3) rug plot. Additionally, multiple distplots
+(from multiple datasets) can be created in the same plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hist_data</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>]</em><em>)</em>) – Use list of lists to plot multiple data
+sets on the same plot.</p></li>
+<li><p><strong>group_labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>)</em>) – Names for each data set.</p></li>
+<li><p><strong>bin_size</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>]</em><em>|float</em><em>)</em>) – Size of histogram bins.
+Default = 1.</p></li>
+<li><p><strong>curve_type</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – ‘kde’ or ‘normal’. Default = ‘kde’</p></li>
+<li><p><strong>histnorm</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – ‘probability density’ or ‘probability’
+Default = ‘probability density’</p></li>
+<li><p><strong>show_hist</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – Add histogram to distplot? Default = True</p></li>
+<li><p><strong>show_curve</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – Add curve to distplot? Default = True</p></li>
+<li><p><strong>show_rug</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – Add rug to distplot? Default = True</p></li>
+<li><p><strong>colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>]</em><em>)</em>) – Colors for traces.</p></li>
+<li><p><strong>rug_text</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>]</em><em>)</em>) – Hovertext values for rug_plot,</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return (dict)</dt>
+<dd class="field-even"><p>Representation of a distplot figure.</p>
+</dd>
+</dl>
+<p>Example 1: Simple distplot of 1 data set
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_distplot</p>
+<dl class="simple">
+<dt>hist_data = [[1.1, 1.1, 2.5, 3.0, 3.5,</dt><dd><p>3.5, 4.1, 4.4, 4.5, 4.5,
+5.0, 5.0, 5.2, 5.5, 5.5,
+5.5, 5.5, 5.5, 6.1, 7.0]]</p>
+</dd>
+</dl>
+<p>group_labels = [‘distplot example’]</p>
+<p>fig = create_distplot(hist_data, group_labels)</p>
+<p>url = py.plot(fig, filename=’Simple distplot’, validate=False)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Two data sets and added rug text
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_distplot</p>
+<p># Add histogram data
+hist1_x = [0.8, 1.2, 0.2, 0.6, 1.6,</p>
+<blockquote>
+<div><p>-0.9, -0.07, 1.95, 0.9, -0.2,
+-0.5, 0.3, 0.4, -0.37, 0.6]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>hist2_x = [0.8, 1.5, 1.5, 0.6, 0.59,</dt><dd><p>1.0, 0.8, 1.7, 0.5, 0.8,
+-0.3, 1.2, 0.56, 0.3, 2.2]</p>
+</dd>
+</dl>
+<p># Group data together
+hist_data = [hist1_x, hist2_x]</p>
+<p>group_labels = [‘2012’, ‘2013’]</p>
+<p># Add text
+rug_text_1 = [‘a1’, ‘b1’, ‘c1’, ‘d1’, ‘e1’,</p>
+<blockquote>
+<div><p>‘f1’, ‘g1’, ‘h1’, ‘i1’, ‘j1’,
+‘k1’, ‘l1’, ‘m1’, ‘n1’, ‘o1’]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>rug_text_2 = [‘a2’, ‘b2’, ‘c2’, ‘d2’, ‘e2’,</dt><dd><p>‘f2’, ‘g2’, ‘h2’, ‘i2’, ‘j2’,
+‘k2’, ‘l2’, ‘m2’, ‘n2’, ‘o2’]</p>
+</dd>
+</dl>
+<p># Group text together
+rug_text_all = [rug_text_1, rug_text_2]</p>
+<p># Create distplot
+fig = create_distplot(</p>
+<blockquote>
+<div><p>hist_data, group_labels, rug_text=rug_text_all, bin_size=.2)</p>
+</div></blockquote>
+<p># Add title
+fig[‘layout’].update(title=’Dist Plot’)</p>
+<p># Plot!
+url = py.plot(fig, filename=’Distplot with rug text’, validate=False)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Plot with normal curve and hide rug plot
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_distplot
+import numpy as np</p>
+<p>x1 = np.random.randn(190)
+x2 = np.random.randn(200)+1
+x3 = np.random.randn(200)-1
+x4 = np.random.randn(210)+2</p>
+<p>hist_data = [x1, x2, x3, x4]
+group_labels = [‘2012’, ‘2013’, ‘2014’, ‘2015’]</p>
+<dl class="simple">
+<dt>fig = create_distplot(</dt><dd><p>hist_data, group_labels, curve_type=’normal’,
+show_rug=False, bin_size=.4)</p>
+</dd>
+</dl>
+<p>url = py.plot(fig, filename=’hist and normal curve’, validate=False)</p>
+<p>Example 4: Distplot with Pandas
+<a href="#id15"><span class="problematic" id="id16">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_distplot
+import numpy as np
+import pandas as pd</p>
+<dl class="simple">
+<dt>df = pd.DataFrame({‘2012’: np.random.randn(200),</dt><dd><p>‘2013’: np.random.randn(200)+1})</p>
+</dd>
+<dt>py.iplot(create_distplot([df[c] for c in df.columns], df.columns),</dt><dd><p>filename=’examples/distplot with pandas’,
+validate=False)</p>
+</dd>
+</dl>
+<p><a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

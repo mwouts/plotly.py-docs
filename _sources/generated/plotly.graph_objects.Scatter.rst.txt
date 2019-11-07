@@ -1,0 +1,28 @@
+:mod:`plotly.graph_objects`.Scatter
+============================
+
+
+.. currentmodule:: plotly.graph_objects
+
+.. autoclass:: Scatter
+
+   
+   .. automethod:: __init__
+   
+
+
+:mod:`plotly.graph_objects`.scatter
+============================
+
+.. autosummary::
+   :toctree: generated/
+   
+   plotly.graph_objects.scatter
+
+.. automodule:: plotly.graph_objects.scatter
+   :members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

@@ -1,0 +1,28 @@
+plotly.graph\_objects.scattercarpet
+===================================
+
+.. automodule:: plotly.graph_objects.scattercarpet
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

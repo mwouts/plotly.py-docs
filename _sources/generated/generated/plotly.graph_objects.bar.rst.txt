@@ -1,0 +1,31 @@
+plotly.graph\_objects.bar
+=========================
+
+.. automodule:: plotly.graph_objects.bar
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ErrorX
+      ErrorY
+      Hoverlabel
+      Insidetextfont
+      Marker
+      Outsidetextfont
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

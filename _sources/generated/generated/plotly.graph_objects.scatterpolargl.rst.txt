@@ -1,0 +1,28 @@
+plotly.graph\_objects.scatterpolargl
+====================================
+
+.. automodule:: plotly.graph_objects.scatterpolargl
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

@@ -1,0 +1,27 @@
+plotly.graph\_objects.indicator
+===============================
+
+.. automodule:: plotly.graph_objects.indicator
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Delta
+      Domain
+      Gauge
+      Number
+      Stream
+      Title
+   
+   
+
+   
+   
+   

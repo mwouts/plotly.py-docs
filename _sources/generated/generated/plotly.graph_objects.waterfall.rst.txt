@@ -1,0 +1,30 @@
+plotly.graph\_objects.waterfall
+===============================
+
+.. automodule:: plotly.graph_objects.waterfall
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Connector
+      Decreasing
+      Hoverlabel
+      Increasing
+      Insidetextfont
+      Outsidetextfont
+      Stream
+      Textfont
+      Totals
+   
+   
+
+   
+   
+   

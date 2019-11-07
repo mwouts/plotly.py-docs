@@ -1,0 +1,27 @@
+plotly.graph\_objects.box
+=========================
+
+.. automodule:: plotly.graph_objects.box
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Unselected
+   
+   
+
+   
+   
+   

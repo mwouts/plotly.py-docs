@@ -1,0 +1,25 @@
+plotly.graph\_objects.carpet
+============================
+
+.. automodule:: plotly.graph_objects.carpet
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Aaxis
+      Baxis
+      Font
+      Stream
+   
+   
+
+   
+   
+   

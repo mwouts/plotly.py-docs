@@ -1,0 +1,24 @@
+plotly.graph\_objects.densitymapbox
+===================================
+
+.. automodule:: plotly.graph_objects.densitymapbox
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Hoverlabel
+      Stream
+   
+   
+
+   
+   
+   

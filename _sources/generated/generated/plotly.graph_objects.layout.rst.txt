@@ -1,0 +1,46 @@
+plotly.graph\_objects.layout
+============================
+
+.. automodule:: plotly.graph_objects.layout
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AngularAxis
+      Annotation
+      Coloraxis
+      Colorscale
+      Font
+      Geo
+      Grid
+      Hoverlabel
+      Image
+      Legend
+      Mapbox
+      Margin
+      Modebar
+      Polar
+      RadialAxis
+      Scene
+      Shape
+      Slider
+      Template
+      Ternary
+      Title
+      Transition
+      Updatemenu
+      XAxis
+      YAxis
+   
+   
+
+   
+   
+   

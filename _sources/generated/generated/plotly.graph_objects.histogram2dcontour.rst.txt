@@ -1,0 +1,29 @@
+plotly.graph\_objects.histogram2dcontour
+========================================
+
+.. automodule:: plotly.graph_objects.histogram2dcontour
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Contours
+      Hoverlabel
+      Line
+      Marker
+      Stream
+      XBins
+      YBins
+   
+   
+
+   
+   
+   

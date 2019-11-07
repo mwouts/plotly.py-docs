@@ -1,0 +1,27 @@
+plotly.graph\_objects.choroplethmapbox
+======================================
+
+.. automodule:: plotly.graph_objects.choroplethmapbox
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Hoverlabel
+      Marker
+      Selected
+      Stream
+      Unselected
+   
+   
+
+   
+   
+   

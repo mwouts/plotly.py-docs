@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_trisurf &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_violin" href="plotly.figure_factory.create_violin.html" />
+    <link rel="prev" title="plotly.figure_factory.create_ternary_contour" href="plotly.figure_factory.create_ternary_contour.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_ternary_contour.html" title="Previous Chapter: plotly.figure_factory.create_ternary_contour"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_violin.html" title="Next Chapter: plotly.figure_factory.create_violin"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-trisurf">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf<a class="headerlink" href="#plotly-figure-factory-create-trisurf" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_trisurf">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_trisurf</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em>, <em class="sig-param">simplices</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">show_colorbar=True</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">color_func=None</em>, <em class="sig-param">title='Trisurf Plot'</em>, <em class="sig-param">plot_edges=True</em>, <em class="sig-param">showbackground=True</em>, <em class="sig-param">backgroundcolor='rgb(230</em>, <em class="sig-param">230</em>, <em class="sig-param">230)'</em>, <em class="sig-param">gridcolor='rgb(255</em>, <em class="sig-param">255</em>, <em class="sig-param">255)'</em>, <em class="sig-param">zerolinecolor='rgb(255</em>, <em class="sig-param">255</em>, <em class="sig-param">255)'</em>, <em class="sig-param">edges_color='rgb(50</em>, <em class="sig-param">50</em>, <em class="sig-param">50)'</em>, <em class="sig-param">height=800</em>, <em class="sig-param">width=800</em>, <em class="sig-param">aspectratio=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_trisurf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns figure for a triangulated surface plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>(</em><em>array</em><em>)</em>) – data values of x in a 1D array</p></li>
+<li><p><strong>y</strong> (<em>(</em><em>array</em><em>)</em>) – data values of y in a 1D array</p></li>
+<li><p><strong>z</strong> (<em>(</em><em>array</em><em>)</em>) – data values of z in a 1D array</p></li>
+<li><p><strong>simplices</strong> (<em>(</em><em>array</em><em>)</em>) – an array of shape (ntri, 3) where ntri is
+the number of triangles in the triangularization. Each row of the
+array contains the indicies of the verticies of each triangle</p></li>
+<li><p><strong>colormap</strong> (<em>(</em><em>str|tuple|list</em><em>)</em>) – either a plotly scale name, an rgb
+or hex color, a color tuple or a list of colors. An rgb color is
+of the form ‘rgb(x, y, z)’ where x, y, z belong to the interval
+[0, 255] and a color tuple is a tuple of the form (a, b, c) where
+a, b and c belong to [0, 1]. If colormap is a list, it must
+contain the valid color types aforementioned as its members</p></li>
+<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – determines if colorbar is visible</p></li>
+<li><p><strong>scale</strong> (<em>(</em><em>list|array</em><em>)</em>) – sets the scale values to be used if a non-
+linearly interpolated colormap is desired. If left as None, a
+linear interpolation between the colors will be excecuted</p></li>
+<li><p><strong>color_func</strong> (<em>(</em><em>function|list</em><em>)</em>) – The parameter that determines the
+coloring of the surface. Takes either a function with 3 arguments
+x, y, z or a list/array of color values the same length as
+simplices. If None, coloring will only depend on the z axis</p></li>
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – title of the plot</p></li>
+<li><p><strong>plot_edges</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – determines if the triangles on the trisurf
+are visible</p></li>
+<li><p><strong>showbackground</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – makes background in plot visible</p></li>
+<li><p><strong>backgroundcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – color of background. Takes a string of
+the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
+<li><p><strong>gridcolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – color of the gridlines besides the axes. Takes
+a string of the form ‘rgb(x,y,z)’ x,y,z are between 0 and 255
+inclusive</p></li>
+<li><p><strong>zerolinecolor</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – color of the axes. Takes a string of the
+form ‘rgb(x,y,z)’ x,y,z are between 0 and 255 inclusive</p></li>
+<li><p><strong>edges_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – color of the edges, if plot_edges is True</p></li>
+<li><p><strong>height</strong> (<em>(</em><em>int|float</em><em>)</em>) – the height of the plot (in pixels)</p></li>
+<li><p><strong>width</strong> (<em>(</em><em>int|float</em><em>)</em>) – the width of the plot (in pixels)</p></li>
+<li><p><strong>aspectratio</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>)</em>) – a dictionary of the aspect ratio values for
+the x, y and z axes. ‘x’, ‘y’ and ‘z’ take (int|float) values</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Sphere
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+# Necessary Imports for Trisurf
+import numpy as np
+from scipy.spatial import Delaunay</p>
+<p>import plotly.plotly as py
+from plotly.figure_factory import create_trisurf
+from plotly.graph_objs import graph_objs</p>
+<p># Make data for plot
+u = np.linspace(0, 2*np.pi, 20)
+v = np.linspace(0, np.pi, 20)
+u,v = np.meshgrid(u,v)
+u = u.flatten()
+v = v.flatten()</p>
+<p>x = np.sin(v)*np.cos(u)
+y = np.sin(v)*np.sin(u)
+z = np.cos(v)</p>
+<p>points2D = np.vstack([u,v]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices</p>
+<p># Create a figure
+fig1 = create_trisurf(x=x, y=y, z=z, colormap=”Rainbow”,</p>
+<blockquote>
+<div><p>simplices=simplices)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig1, filename=’trisurf-plot-sphere’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Torus
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+# Necessary Imports for Trisurf
+import numpy as np
+from scipy.spatial import Delaunay</p>
+<p>import plotly.plotly as py
+from plotly.figure_factory import create_trisurf
+from plotly.graph_objs import graph_objs</p>
+<p># Make data for plot
+u = np.linspace(0, 2*np.pi, 20)
+v = np.linspace(0, 2*np.pi, 20)
+u,v = np.meshgrid(u,v)
+u = u.flatten()
+v = v.flatten()</p>
+<p>x = (3 + (np.cos(v)))*np.cos(u)
+y = (3 + (np.cos(v)))*np.sin(u)
+z = np.sin(v)</p>
+<p>points2D = np.vstack([u,v]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices</p>
+<p># Create a figure
+fig1 = create_trisurf(x=x, y=y, z=z, colormap=”Viridis”,</p>
+<blockquote>
+<div><p>simplices=simplices)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig1, filename=’trisurf-plot-torus’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Mobius Band
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+# Necessary Imports for Trisurf
+import numpy as np
+from scipy.spatial import Delaunay</p>
+<p>import plotly.plotly as py
+from plotly.figure_factory import create_trisurf
+from plotly.graph_objs import graph_objs</p>
+<p># Make data for plot
+u = np.linspace(0, 2*np.pi, 24)
+v = np.linspace(-1, 1, 8)
+u,v = np.meshgrid(u,v)
+u = u.flatten()
+v = v.flatten()</p>
+<p>tp = 1 + 0.5*v*np.cos(u/2.)
+x = tp*np.cos(u)
+y = tp*np.sin(u)
+z = 0.5*v*np.sin(u/2.)</p>
+<p>points2D = np.vstack([u,v]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices</p>
+<p># Create a figure
+fig1 = create_trisurf(x=x, y=y, z=z, colormap=[(0.2, 0.4, 0.6), (1, 1, 1)],</p>
+<blockquote>
+<div><p>simplices=simplices)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig1, filename=’trisurf-plot-mobius-band’)
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+<p>Example 4: Using a Custom Colormap Function with Light Cone
+<a href="#id19"><span class="problematic" id="id20">``</span></a>`
+# Necessary Imports for Trisurf
+import numpy as np
+from scipy.spatial import Delaunay</p>
+<p>import plotly.plotly as py
+from plotly.figure_factory import create_trisurf
+from plotly.graph_objs import graph_objs</p>
+<p># Make data for plot
+u=np.linspace(-np.pi, np.pi, 30)
+v=np.linspace(-np.pi, np.pi, 30)
+u,v=np.meshgrid(u,v)
+u=u.flatten()
+v=v.flatten()</p>
+<p>x = u
+y = u*np.cos(v)
+z = u*np.sin(v)</p>
+<p>points2D = np.vstack([u,v]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices</p>
+<p># Define distance function
+def dist_origin(x, y, z):</p>
+<blockquote>
+<div><p>return np.sqrt((1.0 * x)**2 + (1.0 * y)**2 + (1.0 * z)**2)</p>
+</div></blockquote>
+<p># Create a figure
+fig1 = create_trisurf(x=x, y=y, z=z,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>colormap=[‘#FFFFFF’, ‘#E4FFFE’,</dt><dd><p>‘#A4F6F9’, ‘#FF99FE’,
+‘#BA52ED’],</p>
+</dd>
+</dl>
+<p>scale=[0, 0.6, 0.71, 0.89, 1],
+simplices=simplices,
+color_func=dist_origin)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig1, filename=’trisurf-plot-custom-coloring’)
+<a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<p>Example 5: Enter color_func as a list of colors
+<a href="#id25"><span class="problematic" id="id26">``</span></a>`
+# Necessary Imports for Trisurf
+import numpy as np
+from scipy.spatial import Delaunay
+import random</p>
+<p>import plotly.plotly as py
+from plotly.figure_factory import create_trisurf
+from plotly.graph_objs import graph_objs</p>
+<p># Make data for plot
+u=np.linspace(-np.pi, np.pi, 30)
+v=np.linspace(-np.pi, np.pi, 30)
+u,v=np.meshgrid(u,v)
+u=u.flatten()
+v=v.flatten()</p>
+<p>x = u
+y = u*np.cos(v)
+z = u*np.sin(v)</p>
+<p>points2D = np.vstack([u,v]).T
+tri = Delaunay(points2D)
+simplices = tri.simplices</p>
+<p>colors = []
+color_choices = [‘rgb(0, 0, 0)’, ‘#6c4774’, ‘#d6c7dd’]</p>
+<dl class="simple">
+<dt>for index in range(len(simplices)):</dt><dd><p>colors.append(random.choice(color_choices))</p>
+</dd>
+<dt>fig = create_trisurf(</dt><dd><p>x, y, z, simplices,
+color_func=colors,
+show_colorbar=True,
+edges_color=’rgb(2, 85, 180)’,
+title=’ Modern Art’</p>
+</dd>
+</dl>
+<p>)</p>
+<p>py.iplot(fig, filename=”trisurf-plot-modern-art”)
+<a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

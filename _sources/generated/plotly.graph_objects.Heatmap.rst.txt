@@ -1,0 +1,28 @@
+:mod:`plotly.graph_objects`.Heatmap
+============================
+
+
+.. currentmodule:: plotly.graph_objects
+
+.. autoclass:: Heatmap
+
+   
+   .. automethod:: __init__
+   
+
+
+:mod:`plotly.graph_objects`.heatmap
+============================
+
+.. autosummary::
+   :toctree: generated/
+   
+   plotly.graph_objects.heatmap
+
+.. automodule:: plotly.graph_objects.heatmap
+   :members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

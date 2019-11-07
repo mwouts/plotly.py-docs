@@ -1,0 +1,28 @@
+plotly.graph\_objects.funnel
+============================
+
+.. automodule:: plotly.graph_objects.funnel
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Connector
+      Hoverlabel
+      Insidetextfont
+      Marker
+      Outsidetextfont
+      Stream
+      Textfont
+   
+   
+
+   
+   
+   

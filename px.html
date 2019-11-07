@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Plotly express: plotly.express &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="plotly.express.scatter" href="generated/plotly.express.scatter.html" />
+    <link rel="prev" title="plotly API reference" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: plotly API reference"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly API reference</span>
+    </a>
+  </li>
+  <li>
+    <a href="generated/plotly.express.scatter.html" title="Next Chapter: plotly.express.scatter"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.expres... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-express-plotly-express">
+<span id="px"></span><h1>Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code><a class="headerlink" href="#plotly-express-plotly-express" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://plot.ly/python/plotly-express/">plotly.express</a> module is
+plotly’s high-level API for rapid figure generation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</pre></div>
+</div>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.scatter.html#plotly.express.scatter" title="plotly.express.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([data_frame, x, y, color, symbol, …])</p></td>
+<td><p>In a scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark in 2D space.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.scatter_3d.html#plotly.express.scatter_3d" title="plotly.express.scatter_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_3d</span></code></a>([data_frame, x, y, z, color, …])</p></td>
+<td><p>In a 3D scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark in 3D space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.scatter_polar.html#plotly.express.scatter_polar" title="plotly.express.scatter_polar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_polar</span></code></a>([data_frame, r, theta, color, …])</p></td>
+<td><p>In a polar scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark in</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.scatter_ternary.html#plotly.express.scatter_ternary" title="plotly.express.scatter_ternary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_ternary</span></code></a>([data_frame, a, b, c, …])</p></td>
+<td><p>In a ternary scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark in ternary coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.scatter_mapbox.html#plotly.express.scatter_mapbox" title="plotly.express.scatter_mapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_mapbox</span></code></a>([data_frame, lat, lon, …])</p></td>
+<td><p>In a Mapbox scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark on a Mapbox map.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.scatter_geo.html#plotly.express.scatter_geo" title="plotly.express.scatter_geo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_geo</span></code></a>([data_frame, lat, lon, …])</p></td>
+<td><p>In a geographic scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark on a map.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.line.html#plotly.express.line" title="plotly.express.line"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line</span></code></a>([data_frame, x, y, line_group, color, …])</p></td>
+<td><p>In a 2D line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark in 2D space.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.line_3d.html#plotly.express.line_3d" title="plotly.express.line_3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_3d</span></code></a>([data_frame, x, y, z, color, …])</p></td>
+<td><p>In a 3D line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark in 3D space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.line_polar.html#plotly.express.line_polar" title="plotly.express.line_polar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_polar</span></code></a>([data_frame, r, theta, color, …])</p></td>
+<td><p>In a polar line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark in polar coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.line_ternary.html#plotly.express.line_ternary" title="plotly.express.line_ternary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_ternary</span></code></a>([data_frame, a, b, c, color, …])</p></td>
+<td><p>In a ternary line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark in ternary coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.line_mapbox.html#plotly.express.line_mapbox" title="plotly.express.line_mapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_mapbox</span></code></a>([data_frame, lat, lon, color, …])</p></td>
+<td><p>In a Mapbox line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark on a Mapbox map.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.line_geo.html#plotly.express.line_geo" title="plotly.express.line_geo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_geo</span></code></a>([data_frame, lat, lon, locations, …])</p></td>
+<td><p>In a geographic line plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark on a map.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.area.html#plotly.express.area" title="plotly.express.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a>([data_frame, x, y, line_group, color, …])</p></td>
+<td><p>In a stacked area plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as vertex of a polyline mark in 2D space. The area between successive polylines is filled.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.bar.html#plotly.express.bar" title="plotly.express.bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bar</span></code></a>([data_frame, x, y, color, facet_row, …])</p></td>
+<td><p>In a bar plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as a rectangular mark.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.bar_polar.html#plotly.express.bar_polar" title="plotly.express.bar_polar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bar_polar</span></code></a>([data_frame, r, theta, color, …])</p></td>
+<td><p>In a polar bar plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as a wedge mark in polar coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.violin.html#plotly.express.violin" title="plotly.express.violin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">violin</span></code></a>([data_frame, x, y, color, facet_row, …])</p></td>
+<td><p>In a violin plot, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into a curved mark to     visualize their distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.box.html#plotly.express.box" title="plotly.express.box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">box</span></code></a>([data_frame, x, y, color, facet_row, …])</p></td>
+<td><p>In a box plot, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into a box-and-whisker mark to     visualize their distribution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.strip.html#plotly.express.strip" title="plotly.express.strip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip</span></code></a>([data_frame, x, y, color, facet_row, …])</p></td>
+<td><p>In a strip plot each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented as a jittered mark within categories.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.histogram.html#plotly.express.histogram" title="plotly.express.histogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram</span></code></a>([data_frame, x, y, color, …])</p></td>
+<td><p>In a histogram, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into a rectangular mark to     visualize the 1D distribution of an aggregate function <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> (e.g. the count or sum)     of the value <code class="docutils literal notranslate"><span class="pre">y</span></code> (or <code class="docutils literal notranslate"><span class="pre">x</span></code> if <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is <code class="docutils literal notranslate"><span class="pre">'h'</span></code>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.scatter_matrix.html#plotly.express.scatter_matrix" title="plotly.express.scatter_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_matrix</span></code></a>([data_frame, dimensions, …])</p></td>
+<td><p>In a scatter plot matrix (or SPLOM), each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented     by a multiple symbol marks, one in each cell of a grid of 2D scatter plots, which     plot each pair of <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> against each other.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.parallel_coordinates.html#plotly.express.parallel_coordinates" title="plotly.express.parallel_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_coordinates</span></code></a>([data_frame, …])</p></td>
+<td><p>In a parallel coordinates plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented     by a polyline mark which traverses a set of parallel axes, one for each of the     <code class="docutils literal notranslate"><span class="pre">dimensions</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.parallel_categories.html#plotly.express.parallel_categories" title="plotly.express.parallel_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_categories</span></code></a>([data_frame, …])</p></td>
+<td><p>In a parallel categories (or parallel sets) plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is     grouped with other rows that share the same values of <code class="docutils literal notranslate"><span class="pre">dimensions</span></code> and then plotted     as a polyline mark through a set of parallel axes, one for each of the <code class="docutils literal notranslate"><span class="pre">dimensions</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.choropleth.html#plotly.express.choropleth" title="plotly.express.choropleth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choropleth</span></code></a>([data_frame, lat, lon, …])</p></td>
+<td><p>In a choropleth map, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a colored region mark on a map.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.express.density_contour.html#plotly.express.density_contour" title="plotly.express.density_contour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">density_contour</span></code></a>([data_frame, x, y, z, …])</p></td>
+<td><p>In a density contour plot, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into contour marks to     visualize the 2D distribution of an aggregate function <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> (e.g. the count or sum)     of the value <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.express.density_heatmap.html#plotly.express.density_heatmap" title="plotly.express.density_heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">density_heatmap</span></code></a>([data_frame, x, y, z, …])</p></td>
+<td><p>In a density heatmap, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into colored     rectangular tiles to visualize the 2D distribution of an aggregate function     <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> (e.g. the count or sum) of the value <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

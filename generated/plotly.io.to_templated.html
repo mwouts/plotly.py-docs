@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.io.to_templated &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.io.to_html" href="plotly.io.to_html.html" />
+    <link rel="prev" title="plotly.io.templates" href="plotly.io.templates.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_templated</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.io.templates.html" title="Previous Chapter: plotly.io.templates"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.io.templates</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.io.to_html.html" title="Next Chapter: plotly.io.to_html"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.io.to_html &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-io-to-templated">
+<h1><a class="reference internal" href="../io.html#module-plotly.io" title="plotly.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code></a>.to_templated<a class="headerlink" href="#plotly-io-to-templated" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.io.to_templated">
+<code class="sig-prename descclassname">plotly.io.</code><code class="sig-name descname">to_templated</code><span class="sig-paren">(</span><em class="sig-param">fig</em>, <em class="sig-param">skip=('title'</em>, <em class="sig-param">'text')</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.to_templated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of a figure where all styling properties have been moved
+into the figure’s template.  The template property of the resulting figure
+may then be used to set the default styling of other figures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
+<li><p><strong>skip</strong> – A collection of names of properties to skip when moving properties to
+the template. Defaults to (‘title’, ‘text’) so that the text
+of figure titles, axis titles, and annotations does not become part of
+the template</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Imports
+&gt;&gt;&gt; import plotly.graph_objs as go
+&gt;&gt;&gt; import plotly.io as pio</p>
+<p>Construct a figure with large courier text
+&gt;&gt;&gt; fig = go.Figure(layout={‘title’: ‘Figure Title’,
+…                         ‘font’: {‘size’: 20, ‘family’: ‘Courier’}})
+&gt;&gt;&gt; fig
+Figure({</p>
+<blockquote>
+<div><p>‘data’: [],
+‘layout’: {‘title’: ‘Figure Title’,</p>
+<blockquote>
+<div><p>‘font’: {‘family’: ‘Courier’, ‘size’: 20}}</p>
+</div></blockquote>
+</div></blockquote>
+<p>})</p>
+<p>Convert to a figure with a template. Note how the ‘font’ properties have
+been moved into the template property.
+&gt;&gt;&gt; templated_fig = pio.to_templated(fig)
+&gt;&gt;&gt; templated_fig
+Figure({</p>
+<blockquote>
+<div><p>‘data’: [],
+‘layout’: {‘title’: ‘Figure Title’,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>‘template’: {‘layout’: {‘font’: {‘family’: ‘Courier’,</dt><dd><p>‘size’: 20}}}}</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<p>})</p>
+<p>Next create a new figure with this template</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 2 Title&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="n">templated_fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">template</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig2</span>
+<span class="go">Figure({</span>
+<span class="go">    &#39;data&#39;: [],</span>
+<span class="go">    &#39;layout&#39;: {&#39;title&#39;: &#39;Figure 2 Title&#39;,</span>
+<span class="go">               &#39;template&#39;: {&#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;,</span>
+<span class="go">                                                &#39;size&#39;: 20}}}}</span>
+<span class="go">})</span>
+</pre></div>
+</div>
+<p>The default font in fig2 will now be size 20 Courier.</p>
+<p>Next, register as a named template…
+&gt;&gt;&gt; pio.templates[‘large_courier’] = templated_fig.layout.template</p>
+<p>and specify this template by name when constructing a figure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span>
+<span class="gp">... </span>    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 3 Title&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s1">&#39;template&#39;</span><span class="p">:</span> <span class="s1">&#39;large_courier&#39;</span><span class="p">})</span>
+<span class="go">Figure({</span>
+<span class="go">    &#39;data&#39;: [],</span>
+<span class="go">    &#39;layout&#39;: {&#39;title&#39;: &#39;Figure 3 Title&#39;,</span>
+<span class="go">               &#39;template&#39;: {&#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;,</span>
+<span class="go">                                                &#39;size&#39;: 20}}}}</span>
+<span class="go">})</span>
+</pre></div>
+</div>
+<p>Finally, set this as the default template to be applied to all new figures</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;large_courier&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Figure 4 Title&#39;</span><span class="p">})</span>
+<span class="go">Figure({</span>
+<span class="go">    &#39;data&#39;: [],</span>
+<span class="go">    &#39;layout&#39;: {&#39;title&#39;: &#39;Figure 4 Title&#39;,</span>
+<span class="go">               &#39;template&#39;: {&#39;layout&#39;: {&#39;font&#39;: {&#39;family&#39;: &#39;Courier&#39;,</span>
+<span class="go">                                                &#39;size&#39;: 20}}}}</span>
+<span class="go">})</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+plotly.graph\_objects.heatmap
+=============================
+
+.. automodule:: plotly.graph_objects.heatmap
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Hoverlabel
+      Stream
+   
+   
+
+   
+   
+   

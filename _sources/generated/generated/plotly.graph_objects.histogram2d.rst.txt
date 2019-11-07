@@ -1,0 +1,27 @@
+plotly.graph\_objects.histogram2d
+=================================
+
+.. automodule:: plotly.graph_objects.histogram2d
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Hoverlabel
+      Marker
+      Stream
+      XBins
+      YBins
+   
+   
+
+   
+   
+   

@@ -1,0 +1,28 @@
+plotly.graph\_objects.scatterternary
+====================================
+
+.. automodule:: plotly.graph_objects.scatterternary
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

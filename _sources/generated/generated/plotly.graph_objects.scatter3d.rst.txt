@@ -1,0 +1,30 @@
+plotly.graph\_objects.scatter3d
+===============================
+
+.. automodule:: plotly.graph_objects.scatter3d
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ErrorX
+      ErrorY
+      ErrorZ
+      Hoverlabel
+      Line
+      Marker
+      Projection
+      Stream
+      Textfont
+   
+   
+
+   
+   
+   

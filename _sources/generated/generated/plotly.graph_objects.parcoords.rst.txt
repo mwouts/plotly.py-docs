@@ -1,0 +1,28 @@
+plotly.graph\_objects.parcoords
+===============================
+
+.. automodule:: plotly.graph_objects.parcoords
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Dimension
+      Domain
+      Labelfont
+      Line
+      Rangefont
+      Stream
+      Tickfont
+   
+   
+
+   
+   
+   

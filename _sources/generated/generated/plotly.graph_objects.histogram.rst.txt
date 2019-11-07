@@ -1,0 +1,31 @@
+plotly.graph\_objects.histogram
+===============================
+
+.. automodule:: plotly.graph_objects.histogram
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Cumulative
+      ErrorX
+      ErrorY
+      Hoverlabel
+      Marker
+      Selected
+      Stream
+      Unselected
+      XBins
+      YBins
+   
+   
+
+   
+   
+   

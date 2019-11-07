@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_2d_density &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_annotated_heatmap" href="plotly.figure_factory.create_annotated_heatmap.html" />
+    <link rel="prev" title="Figure Factory" href="../figure_factory.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../figure_factory.html" title="Previous Chapter: Figure Factory"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Figure Factory</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_annotated_heatmap.html" title="Next Chapter: plotly.figure_factory.create_annotated_heatmap"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-2d-density">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density<a class="headerlink" href="#plotly-figure-factory-create-2d-density" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_2d_density">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_2d_density</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">colorscale='Earth'</em>, <em class="sig-param">ncontours=20</em>, <em class="sig-param">hist_color=(0</em>, <em class="sig-param">0</em>, <em class="sig-param">0.5)</em>, <em class="sig-param">point_color=(0</em>, <em class="sig-param">0</em>, <em class="sig-param">0.5)</em>, <em class="sig-param">point_size=2</em>, <em class="sig-param">title='2D Density Plot'</em>, <em class="sig-param">height=600</em>, <em class="sig-param">width=600</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_2d_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns figure for a 2D density plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>(</em><em>list|array</em><em>)</em>) – x-axis data for plot generation</p></li>
+<li><p><strong>y</strong> (<em>(</em><em>list|array</em><em>)</em>) – y-axis data for plot generation</p></li>
+<li><p><strong>colorscale</strong> (<em>(</em><em>str|tuple|list</em><em>)</em>) – either a plotly scale name, an rgb
+or hex color, a color tuple or a list or tuple of colors. An rgb
+color is of the form ‘rgb(x, y, z)’ where x, y, z belong to the
+interval [0, 255] and a color tuple is a tuple of the form
+(a, b, c) where a, b and c belong to [0, 1]. If colormap is a
+list, it must contain the valid color types aforementioned as its
+members.</p></li>
+<li><p><strong>ncontours</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>)</em>) – the number of 2D contours to draw on the plot</p></li>
+<li><p><strong>hist_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the color of the plotted histograms</p></li>
+<li><p><strong>point_color</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the color of the scatter points</p></li>
+<li><p><strong>point_size</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the color of the scatter points</p></li>
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – set the title for the plot</p></li>
+<li><p><strong>height</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the height of the chart</p></li>
+<li><p><strong>width</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the width of the chart</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Simple 2D Density Plot
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory create_2d_density</p>
+<p>import numpy as np</p>
+<p># Make data points
+t = np.linspace(-1,1.2,2000)
+x = (t**3)+(0.3*np.random.randn(2000))
+y = (t**6)+(0.3*np.random.randn(2000))</p>
+<p># Create a figure
+fig = create_2D_density(x, y)</p>
+<p># Plot the data
+py.iplot(fig, filename=’simple-2d-density’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Using Parameters
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory create_2d_density</p>
+<p>import numpy as np</p>
+<p># Make data points
+t = np.linspace(-1,1.2,2000)
+x = (t**3)+(0.3*np.random.randn(2000))
+y = (t**6)+(0.3*np.random.randn(2000))</p>
+<p># Create custom colorscale
+colorscale = [‘#7A4579’, ‘#D56073’, ‘rgb(236,158,105)’,</p>
+<blockquote>
+<div><p>(1, 1, 0.2), (0.98,0.98,0.98)]</p>
+</div></blockquote>
+<p># Create a figure
+fig = create_2D_density(</p>
+<blockquote>
+<div><p>x, y, colorscale=colorscale,
+hist_color=’rgb(255, 237, 222)’, point_size=3)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig, filename=’use-parameters’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

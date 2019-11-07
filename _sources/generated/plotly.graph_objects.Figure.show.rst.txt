@@ -1,0 +1,6 @@
+plotly.graph\_objects.Figure.show
+=================================
+
+.. currentmodule:: plotly.graph_objects
+
+.. automethod:: Figure.show

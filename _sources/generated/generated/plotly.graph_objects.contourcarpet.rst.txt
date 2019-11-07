@@ -1,0 +1,25 @@
+plotly.graph\_objects.contourcarpet
+===================================
+
+.. automodule:: plotly.graph_objects.contourcarpet
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ColorBar
+      Contours
+      Line
+      Stream
+   
+   
+
+   
+   
+   

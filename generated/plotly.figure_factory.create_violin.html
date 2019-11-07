@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_violin &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="I/O" href="../io.html" />
+    <link rel="prev" title="plotly.figure_factory.create_trisurf" href="plotly.figure_factory.create_trisurf.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_trisurf.html" title="Previous Chapter: plotly.figure_factory.create_trisurf"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../io.html" title="Next Chapter: I/O"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">I/O &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-violin">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin<a class="headerlink" href="#plotly-figure-factory-create-violin" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_violin">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_violin</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_header=None</em>, <em class="sig-param">group_header=None</em>, <em class="sig-param">colors=None</em>, <em class="sig-param">use_colorscale=False</em>, <em class="sig-param">group_stats=None</em>, <em class="sig-param">rugplot=True</em>, <em class="sig-param">sort=False</em>, <em class="sig-param">height=450</em>, <em class="sig-param">width=600</em>, <em class="sig-param">title='Violin and Rug Plot'</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_violin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns figure for a violin plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>(</em><em>list|array</em><em>)</em>) – accepts either a list of numerical values,
+a list of dictionaries all with identical keys and at least one
+column of numeric values, or a pandas dataframe with at least one
+column of numbers.</p></li>
+<li><p><strong>data_header</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the header of the data column to be used
+from an inputted pandas dataframe. Not applicable if ‘data’ is
+a list of numeric values.</p></li>
+<li><p><strong>group_header</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – applicable if grouping data by a variable.
+‘group_header’ must be set to the name of the grouping variable.</p></li>
+<li><p><strong>colors</strong> (<em>(</em><em>str|tuple|list|dict</em><em>)</em>) – either a plotly scale name,
+an rgb or hex color, a color tuple, a list of colors or a
+dictionary. An rgb color is of the form ‘rgb(x, y, z)’ where
+x, y and z belong to the interval [0, 255] and a color tuple is a
+tuple of the form (a, b, c) where a, b and c belong to [0, 1].
+If colors is a list, it must contain valid color types as its
+members.</p></li>
+<li><p><strong>use_colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – only applicable if grouping by another
+variable. Will implement a colorscale based on the first 2 colors
+of param colors. This means colors must be a list with at least 2
+colors in it (Plotly colorscales are accepted since they map to a
+list of two rgb colors). Default = False</p></li>
+<li><p><strong>group_stats</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>)</em>) – a dictioanry where each key is a unique
+value from the group_header column in data. Each value must be a
+number and will be used to color the violin plots if a colorscale
+is being used.</p></li>
+<li><p><strong>rugplot</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – determines if a rugplot is draw on violin plot.
+Default = True</p></li>
+<li><p><strong>sort</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – determines if violins are sorted
+alphabetically (True) or by input order (False). Default = False</p></li>
+<li><p><strong>height</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the height of the violin plot.</p></li>
+<li><p><strong>width</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the width of the violin plot.</p></li>
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the title of the violin plot.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Single Violin Plot
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_violin
+from plotly.graph_objs import graph_objs</p>
+<p>import numpy as np
+from scipy import stats</p>
+<p># create list of random values
+data_list = np.random.randn(100)
+data_list.tolist()</p>
+<p># create violin fig
+fig = create_violin(data_list, colors=’#604d9e’)</p>
+<p># plot
+py.iplot(fig, filename=’Violin Plot’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Multiple Violin Plots with Qualitative Coloring
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_violin
+from plotly.graph_objs import graph_objs</p>
+<p>import numpy as np
+import pandas as pd
+from scipy import stats</p>
+<p># create dataframe
+np.random.seed(619517)
+Nr=250
+y = np.random.randn(Nr)
+gr = np.random.choice(list(“ABCDE”), Nr)
+norm_params=[(0, 1.2), (0.7, 1), (-0.5, 1.4), (0.3, 1), (0.8, 0.9)]</p>
+<dl class="simple">
+<dt>for i, letter in enumerate(“ABCDE”):</dt><dd><p>y[gr == letter] <a href="#id9"><span class="problematic" id="id10">*</span></a>=norm_params[i][1]+ norm_params[i][0]</p>
+</dd>
+</dl>
+<p>df = pd.DataFrame(dict(Score=y, Group=gr))</p>
+<p># create violin fig
+fig = create_violin(df, data_header=’Score’, group_header=’Group’,</p>
+<blockquote>
+<div><p>sort=True, height=600, width=1000)</p>
+</div></blockquote>
+<p># plot
+py.iplot(fig, filename=’Violin Plot with Coloring’)
+<a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">`</span></a></p>
+<p>Example 3: Violin Plots with Colorscale
+<a href="#id15"><span class="problematic" id="id16">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_violin
+from plotly.graph_objs import graph_objs</p>
+<p>import numpy as np
+import pandas as pd
+from scipy import stats</p>
+<p># create dataframe
+np.random.seed(619517)
+Nr=250
+y = np.random.randn(Nr)
+gr = np.random.choice(list(“ABCDE”), Nr)
+norm_params=[(0, 1.2), (0.7, 1), (-0.5, 1.4), (0.3, 1), (0.8, 0.9)]</p>
+<dl class="simple">
+<dt>for i, letter in enumerate(“ABCDE”):</dt><dd><p>y[gr == letter] <a href="#id17"><span class="problematic" id="id18">*</span></a>=norm_params[i][1]+ norm_params[i][0]</p>
+</dd>
+</dl>
+<p>df = pd.DataFrame(dict(Score=y, Group=gr))</p>
+<p># define header params
+data_header = ‘Score’
+group_header = ‘Group’</p>
+<p># make groupby object with pandas
+group_stats = {}
+groupby_data = df.groupby([group_header])</p>
+<dl class="simple">
+<dt>for group in “ABCDE”:</dt><dd><p>data_from_group = groupby_data.get_group(group)[data_header]
+# take a stat of the grouped data
+stat = np.median(data_from_group)
+# add to dictionary
+group_stats[group] = stat</p>
+</dd>
+</dl>
+<p># create violin fig
+fig = create_violin(df, data_header=’Score’, group_header=’Group’,</p>
+<blockquote>
+<div><p>height=600, width=1000, use_colorscale=True,
+group_stats=group_stats)</p>
+</div></blockquote>
+<p># plot
+py.iplot(fig, filename=’Violin Plot with Colorscale’)
+<a href="#id19"><span class="problematic" id="id20">``</span></a><a href="#id21"><span class="problematic" id="id22">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_scatterplotmatrix &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_streamline" href="plotly.figure_factory.create_streamline.html" />
+    <link rel="prev" title="plotly.figure_factory.create_quiver" href="plotly.figure_factory.create_quiver.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_quiver.html" title="Previous Chapter: plotly.figure_factory.create_quiver"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_streamline.html" title="Next Chapter: plotly.figure_factory.create_streamline"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-scatterplotmatrix">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix<a class="headerlink" href="#plotly-figure-factory-create-scatterplotmatrix" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_scatterplotmatrix">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_scatterplotmatrix</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">index=None</em>, <em class="sig-param">endpts=None</em>, <em class="sig-param">diag='scatter'</em>, <em class="sig-param">height=500</em>, <em class="sig-param">width=500</em>, <em class="sig-param">size=6</em>, <em class="sig-param">title='Scatterplot Matrix'</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">colormap_type='cat'</em>, <em class="sig-param">dataframe=None</em>, <em class="sig-param">headers=None</em>, <em class="sig-param">index_vals=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_scatterplotmatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data for a scatterplot matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>(</em><em>array</em><em>)</em>) – array of the data with column headers</p></li>
+<li><p><strong>index</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – name of the index column in data array</p></li>
+<li><p><strong>endpts</strong> (<em>(</em><em>list|tuple</em><em>)</em>) – takes an increasing sequece of numbers
+that defines intervals on the real line. They are used to group
+the entries in an index of numbers into their corresponding
+interval and therefore can be treated as categorical data</p></li>
+<li><p><strong>diag</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – sets the chart type for the main diagonal plots.
+The options are ‘scatter’, ‘histogram’ and ‘box’.</p></li>
+<li><p><strong>height</strong> (<em>(</em><em>int|float</em><em>)</em>) – sets the height of the chart</p></li>
+<li><p><strong>width</strong> (<em>(</em><em>int|float</em><em>)</em>) – sets the width of the chart</p></li>
+<li><p><strong>size</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – sets the marker size (in px)</p></li>
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the title label of the scatterplot matrix</p></li>
+<li><p><strong>colormap</strong> (<em>(</em><em>str|tuple|list|dict</em><em>)</em>) – either a plotly scale name,
+an rgb or hex color, a color tuple, a list of colors or a
+dictionary. An rgb color is of the form ‘rgb(x, y, z)’ where
+x, y and z belong to the interval [0, 255] and a color tuple is a
+tuple of the form (a, b, c) where a, b and c belong to [0, 1].
+If colormap is a list, it must contain valid color types as its
+members.
+If colormap is a dictionary, all the string entries in
+the index column must be a key in colormap. In this case, the
+colormap_type is forced to ‘cat’ or categorical</p></li>
+<li><p><strong>colormap_type</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – determines how colormap is interpreted.
+Valid choices are ‘seq’ (sequential) and ‘cat’ (categorical). If
+‘seq’ is selected, only the first two colors in colormap will be
+considered (when colormap is a list) and the index values will be
+linearly interpolated between those two colors. This option is
+forced if all index values are numeric.
+If ‘cat’ is selected, a color from colormap will be assigned to
+each category from index, including the intervals if endpts is
+being used</p></li>
+<li><p><strong>**kwargs</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>)</em>) – <p>a dictionary of scatterplot arguments
+The only forbidden parameters are ‘size’, ‘color’ and
+‘colorscale’ in ‘marker’</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Vanilla Scatterplot Matrix
+<a href="#id3"><span class="problematic" id="id4">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p># Create dataframe
+df = pd.DataFrame(np.random.randn(10, 2),</p>
+<blockquote>
+<div><p>columns=[‘Column 1’, ‘Column 2’])</p>
+</div></blockquote>
+<p># Create scatterplot matrix
+fig = create_scatterplotmatrix(df)</p>
+<p># Plot
+py.iplot(fig, filename=’Vanilla Scatterplot Matrix’)
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>Example 2: Indexing a Column
+<a href="#id9"><span class="problematic" id="id10">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p># Create dataframe with index
+df = pd.DataFrame(np.random.randn(10, 2),</p>
+<blockquote>
+<div><p>columns=[‘A’, ‘B’])</p>
+</div></blockquote>
+<p># Add another column of strings to the dataframe
+df[‘Fruit’] = pd.Series([‘apple’, ‘apple’, ‘grape’, ‘apple’, ‘apple’,</p>
+<blockquote>
+<div><p>‘grape’, ‘pear’, ‘pear’, ‘apple’, ‘pear’])</p>
+</div></blockquote>
+<p># Create scatterplot matrix
+fig = create_scatterplotmatrix(df, index=’Fruit’, size=10)</p>
+<p># Plot
+py.iplot(fig, filename = ‘Scatterplot Matrix with Index’)
+<a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">`</span></a></p>
+<p>Example 3: Styling the Diagonal Subplots
+<a href="#id15"><span class="problematic" id="id16">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p># Create dataframe with index
+df = pd.DataFrame(np.random.randn(10, 4),</p>
+<blockquote>
+<div><p>columns=[‘A’, ‘B’, ‘C’, ‘D’])</p>
+</div></blockquote>
+<p># Add another column of strings to the dataframe
+df[‘Fruit’] = pd.Series([‘apple’, ‘apple’, ‘grape’, ‘apple’, ‘apple’,</p>
+<blockquote>
+<div><p>‘grape’, ‘pear’, ‘pear’, ‘apple’, ‘pear’])</p>
+</div></blockquote>
+<p># Create scatterplot matrix
+fig = create_scatterplotmatrix(df, diag=’box’, index=’Fruit’, height=1000,</p>
+<blockquote>
+<div><p>width=1000)</p>
+</div></blockquote>
+<p># Plot
+py.iplot(fig, filename = ‘Scatterplot Matrix - Diagonal Styling’)
+<a href="#id17"><span class="problematic" id="id18">``</span></a><a href="#id19"><span class="problematic" id="id20">`</span></a></p>
+<p>Example 4: Use a Theme to Style the Subplots
+<a href="#id21"><span class="problematic" id="id22">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p># Create dataframe with random data
+df = pd.DataFrame(np.random.randn(100, 3),</p>
+<blockquote>
+<div><p>columns=[‘A’, ‘B’, ‘C’])</p>
+</div></blockquote>
+<p># Create scatterplot matrix using a built-in
+# Plotly palette scale and indexing column ‘A’
+fig = create_scatterplotmatrix(df, diag=’histogram’, index=’A’,</p>
+<blockquote>
+<div><p>colormap=’Blues’, height=800, width=800)</p>
+</div></blockquote>
+<p># Plot
+py.iplot(fig, filename = ‘Scatterplot Matrix - Colormap Theme’)
+<a href="#id23"><span class="problematic" id="id24">``</span></a><a href="#id25"><span class="problematic" id="id26">`</span></a></p>
+<p>Example 5: Example 4 with Interval Factoring
+<a href="#id27"><span class="problematic" id="id28">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p># Create dataframe with random data
+df = pd.DataFrame(np.random.randn(100, 3),</p>
+<blockquote>
+<div><p>columns=[‘A’, ‘B’, ‘C’])</p>
+</div></blockquote>
+<p># Create scatterplot matrix using a list of 2 rgb tuples
+# and endpoints at -1, 0 and 1
+fig = create_scatterplotmatrix(df, diag=’histogram’, index=’A’,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>colormap=[‘rgb(140, 255, 50)’,</dt><dd><p>‘rgb(170, 60, 115)’, ‘#6c4774’,
+(0.5, 0.1, 0.8)],</p>
+</dd>
+</dl>
+<p>endpts=[-1, 0, 1], height=800, width=800)</p>
+</div></blockquote>
+<p># Plot
+py.iplot(fig, filename = ‘Scatterplot Matrix - Intervals’)
+<a href="#id29"><span class="problematic" id="id30">``</span></a><a href="#id31"><span class="problematic" id="id32">`</span></a></p>
+<p>Example 6: Using the colormap as a Dictionary
+<a href="#id33"><span class="problematic" id="id34">``</span></a>`
+import plotly.plotly as py
+from plotly.graph_objs import graph_objs
+from plotly.figure_factory import create_scatterplotmatrix</p>
+<p>import numpy as np
+import pandas as pd
+import random</p>
+<p># Create dataframe with random data
+df = pd.DataFrame(np.random.randn(100, 3),</p>
+<blockquote>
+<div><dl class="simple">
+<dt>columns=[‘Column A’,</dt><dd><p>‘Column B’,
+‘Column C’])</p>
+</dd>
+</dl>
+</div></blockquote>
+<p># Add new color column to dataframe
+new_column = []
+strange_colors = [‘turquoise’, ‘limegreen’, ‘goldenrod’]</p>
+<dl class="simple">
+<dt>for j in range(100):</dt><dd><p>new_column.append(random.choice(strange_colors))</p>
+</dd>
+</dl>
+<p>df[‘Colors’] = pd.Series(new_column, index=df.index)</p>
+<p># Create scatterplot matrix using a dictionary of hex color values
+# which correspond to actual color names in ‘Colors’ column
+fig = create_scatterplotmatrix(</p>
+<blockquote>
+<div><p>df, diag=’box’, index=’Colors’,
+colormap= dict(</p>
+<blockquote>
+<div><p>turquoise = ‘#00F5FF’,
+limegreen = ‘#32CD32’,
+goldenrod = ‘#DAA520’</p>
+</div></blockquote>
+<p>),
+colormap_type=’cat’,
+height=800, width=800</p>
+</div></blockquote>
+<p>)</p>
+<p># Plot
+py.iplot(fig, filename = ‘Scatterplot Matrix - colormap dictionary ‘)
+<a href="#id35"><span class="problematic" id="id36">``</span></a><a href="#id37"><span class="problematic" id="id38">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

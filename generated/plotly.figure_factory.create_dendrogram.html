@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_dendrogram &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_distplot" href="plotly.figure_factory.create_distplot.html" />
+    <link rel="prev" title="plotly.figure_factory.create_candlestick" href="plotly.figure_factory.create_candlestick.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_candlestick.html" title="Previous Chapter: plotly.figure_factory.create_candlestick"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_distplot.html" title="Next Chapter: plotly.figure_factory.create_distplot"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-dendrogram">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram<a class="headerlink" href="#plotly-figure-factory-create-dendrogram" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_dendrogram">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_dendrogram</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">orientation='bottom'</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">colorscale=None</em>, <em class="sig-param">distfun=None</em>, <em class="sig-param">linkagefun=&lt;function &lt;lambda&gt;&gt;</em>, <em class="sig-param">hovertext=None</em>, <em class="sig-param">color_threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_dendrogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>BETA function that returns a dendrogram Plotly figure object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>(</em><em>ndarray</em><em>)</em>) – Matrix of observations as array of arrays</p></li>
+<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
+<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
+<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>)</em>) – Optional colorscale for dendrogram tree</p></li>
+<li><p><strong>distfun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the pairwise distance from
+the observations</p></li>
+<li><p><strong>linkagefun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the linkage matrix from
+the pairwise distances</p></li>
+<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
+clusters</p></li>
+<li><p><strong>color_threshold</strong> (<em>(</em><em>double</em><em>)</em>) – Value at which the separation of clusters will be made</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Simple bottom oriented dendrogram
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np</p>
+<p>X = np.random.rand(10,10)
+dendro = create_dendrogram(X)
+plot_url = py.plot(dendro, filename=’simple-dendrogram’)</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Dendrogram to put on the left of the heatmap
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np</p>
+<p>X = np.random.rand(5,5)
+names = [‘Jack’, ‘Oxana’, ‘John’, ‘Chelsea’, ‘Mark’]
+dendro = create_dendrogram(X, orientation=’right’, labels=names)
+dendro[‘layout’].update({‘width’:700, ‘height’:500})</p>
+<p>py.iplot(dendro, filename=’vertical-dendrogram’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Dendrogram with Pandas
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p>Index= [‘A’,’B’,’C’,’D’,’E’,’F’,’G’,’H’,’I’,’J’]
+df = pd.DataFrame(abs(np.random.randn(10, 10)), index=Index)
+fig = create_dendrogram(df, labels=Index)
+url = py.plot(fig, filename=’pandas-dendrogram’)
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

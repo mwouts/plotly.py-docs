@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_streamline &#8212;  4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plotly-style.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_table" href="plotly.figure_factory.create_table.html" />
+    <link rel="prev" title="plotly.figure_factory.create_scatterplotmatrix" href="plotly.figure_factory.create_scatterplotmatrix.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="plotly.figure_factory.create_scatterplotmatrix.html" title="Previous Chapter: plotly.figure_factory.create_scatterplotmatrix"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; plotly.figure...</span>
+    </a>
+  </li>
+  <li>
+    <a href="plotly.figure_factory.create_table.html" title="Next Chapter: plotly.figure_factory.create_table"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">plotly.figure... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="plotly-figure-factory-create-streamline">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline<a class="headerlink" href="#plotly-figure-factory-create-streamline" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_streamline">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_streamline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">u</em>, <em class="sig-param">v</em>, <em class="sig-param">density=1</em>, <em class="sig-param">angle=0.3490658503988659</em>, <em class="sig-param">arrow_scale=0.09</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_streamline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data for a streamline plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – 1 dimensional, evenly spaced list or array</p></li>
+<li><p><strong>y</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – 1 dimensional, evenly spaced list or array</p></li>
+<li><p><strong>u</strong> (<em>(</em><em>ndarray</em><em>)</em>) – 2 dimensional array</p></li>
+<li><p><strong>v</strong> (<em>(</em><em>ndarray</em><em>)</em>) – 2 dimensional array</p></li>
+<li><p><strong>density</strong> (<em>(</em><em>float|int</em><em>)</em>) – controls the density of streamlines in
+plot. This is multiplied by 30 to scale similiarly to other
+available streamline functions such as matplotlib.
+Default = 1</p></li>
+<li><p><strong>in radians</strong><strong>) </strong><strong>angle</strong> (<em>(</em><em>angle</em>) – angle of arrowhead. Default = pi/9</p></li>
+<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – value to scale length of arrowhead
+Default = .09</p></li>
+<li><p><strong>kwargs</strong> – kwargs passed through plotly.graph_objs.Scatter
+for more information on valid kwargs call
+help(plotly.graph_objs.Scatter)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Rtype (dict)</dt>
+<dd class="field-even"><p>returns a representation of streamline figure.</p>
+</dd>
+</dl>
+<p>Example 1: Plot simple streamline and increase arrow size
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_streamline</p>
+<p>import numpy as np
+import math</p>
+<p># Add data
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+Y, X = np.meshgrid(x, y)
+u = -1 - X**2 + Y
+v = 1 + X - Y**2
+u = u.T  # Transpose
+v = v.T  # Transpose</p>
+<p># Create streamline
+fig = create_streamline(x, y, u, v, arrow_scale=.1)</p>
+<p># Plot
+py.plot(fig, filename=’streamline’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: from nbviewer.ipython.org/github/barbagroup/AeroPython
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_streamline</p>
+<p>import numpy as np
+import math</p>
+<p># Add data
+N = 50
+x_start, x_end = -2.0, 2.0
+y_start, y_end = -1.0, 1.0
+x = np.linspace(x_start, x_end, N)
+y = np.linspace(y_start, y_end, N)
+X, Y = np.meshgrid(x, y)
+ss = 5.0
+x_s, y_s = -1.0, 0.0</p>
+<p># Compute the velocity field on the mesh grid
+u_s = ss/(2*np.pi) * (X-x_s)/((X-x_s)**2 + (Y-y_s)**2)
+v_s = ss/(2*np.pi) * (Y-y_s)/((X-x_s)**2 + (Y-y_s)**2)</p>
+<p># Create streamline
+fig = create_streamline(x, y, u_s, v_s, density=2, name=’streamline’)</p>
+<p># Add source point
+point = Scatter(x=[x_s], y=[y_s], mode=’markers’,</p>
+<blockquote>
+<div><p>marker=Marker(size=14), name=’source point’)</p>
+</div></blockquote>
+<p># Plot
+fig[‘data’].append(point)
+py.plot(fig, filename=’streamline’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, plotly team.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

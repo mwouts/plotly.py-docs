@@ -1,0 +1,28 @@
+:mod:`plotly.graph_objects`.Parcoords
+==============================
+
+
+.. currentmodule:: plotly.graph_objects
+
+.. autoclass:: Parcoords
+
+   
+   .. automethod:: __init__
+   
+
+
+:mod:`plotly.graph_objects`.parcoords
+==============================
+
+.. autosummary::
+   :toctree: generated/
+   
+   plotly.graph_objects.parcoords
+
+.. automodule:: plotly.graph_objects.parcoords
+   :members:
+
+
+.. raw:: html
+
+    <div class="clearer"></div>

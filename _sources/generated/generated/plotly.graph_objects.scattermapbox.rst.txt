@@ -1,0 +1,28 @@
+plotly.graph\_objects.scattermapbox
+===================================
+
+.. automodule:: plotly.graph_objects.scattermapbox
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Hoverlabel
+      Line
+      Marker
+      Selected
+      Stream
+      Textfont
+      Unselected
+   
+   
+
+   
+   
+   

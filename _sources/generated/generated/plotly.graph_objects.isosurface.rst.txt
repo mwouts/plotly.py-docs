@@ -1,0 +1,31 @@
+plotly.graph\_objects.isosurface
+================================
+
+.. automodule:: plotly.graph_objects.isosurface
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Caps
+      ColorBar
+      Contour
+      Hoverlabel
+      Lighting
+      Lightposition
+      Slices
+      Spaceframe
+      Stream
+      Surface
+   
+   
+
+   
+   
+   

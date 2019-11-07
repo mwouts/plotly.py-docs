@@ -1,0 +1,29 @@
+plotly.graph\_objects.violin
+============================
+
+.. automodule:: plotly.graph_objects.violin
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Box
+      Hoverlabel
+      Line
+      Marker
+      Meanline
+      Selected
+      Stream
+      Unselected
+   
+   
+
+   
+   
+   
