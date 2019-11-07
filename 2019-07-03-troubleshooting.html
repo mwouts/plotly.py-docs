@@ -1,0 +1,61 @@
+---
+description: How to troubleshoot import and rendering problems in Plotly with Python.
+display_as: file_settings
+has_thumbnail: True
+ipynb: ~notebook_demo/97
+language: python
+layout: base
+name: Troubleshooting
+order: 50
+page_type: u-guide
+permalink: python/troubleshooting/
+thumbnail: thumbnail/modebar-icons.png
+v4upgrade: True
+---
+
+{% raw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Version-Problems">Version Problems<a class="anchor-link" href="#Version-Problems">&#182;</a></h3><p>In order to follow the examples in this documentation, you should have the latest version of <code>plotly</code> installed (4.x), as detailed in the <a href="/python/getting-started">Getting Started</a> guide. This documentation (under <a href="https://plot.ly/python">https://plot.ly/python</a>) is incompatible with <code>plotly</code> version 3.x, for which the documentation is available under <a href="https://plot.ly/python/v3">https://plot.ly/python/v3</a>.</p>
+<h3 id="Import-Problems">Import Problems<a class="anchor-link" href="#Import-Problems">&#182;</a></h3><p>Most <code>import</code> problems or <code>AttributeError</code>s can be traced back to having multiple versions of <code>plotly</code> installed, for example once with <code>conda</code> and once with <code>pip</code>. It's often worthwhile to uninstall with both methods before following the <a href="/python/getting-started">Getting Started</a> instructions from scratch with one or the other. You can run the following commands in a terminal to fully remove <code>plotly</code> before installing again:</p>
+<div class="highlight"><pre><span></span>$ conda uninstall plotly
+$ pip remove plotly
+</pre></div>
+<h3 id="Jupyter-Notebook-Classic-Problems">Jupyter Notebook Classic Problems<a class="anchor-link" href="#Jupyter-Notebook-Classic-Problems">&#182;</a></h3><p>The classic Jupyter Notebook (i.e. launched with <code>jupyter notebook</code>) sometimes suffers from a problem whereby if you close the window and reopen it, your plots render as blank spaces. The easiest solution is to run "Restart &amp; Clear Output" from the Kernel menu and rerun your notebook.</p>
+<p>If rerunning your notebook is prohibitive, you may safely run the following code in a Notebook (not in JupyterLab!) at any time and it should restore your figures:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="kn">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span>
+</pre></div>
+<h3 id="JupyterLab-Problems">JupyterLab Problems<a class="anchor-link" href="#JupyterLab-Problems">&#182;</a></h3><p>In order to use <code>plotly</code> in JupyterLab, you <em>must have the extensions installed</em> as detailed in the <a href="/python/getting-started">Getting Started guide</a>. Please note that the <em>extension version matters</em>: the extension versions in the <a href="/python/getting-started">Getting Started</a> guide match the version of <code>plotly</code> at the top of the guide and so they should be installed together. Note also that these extensions are meant to work with JupyterLab 1.x and not 0.x.</p>
+<p>If you are having problems in JupyterLab, a good first step is to check that you have the extensions installed by running uninstall/reinstall the extensions.</p>
+<p>To list your current extensions, run the following command in a terminal shell:</p>
+<div class="highlight"><pre><span></span>$ jupyter labextension list
+</pre></div>
+<p>To uninstall your <code>plotly</code> extensions, run the following commands in a terminal shell before reinstalling them by following the instructions in the <a href="/python/getting-started">Getting Started guide</a>:</p>
+<div class="highlight"><pre><span></span>$ jupyter labextension uninstall jupyterlab-plotly
+$ jupyter labextension uninstall plotlywidget
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+
+ 
+
+
+{% endraw %}

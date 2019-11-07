@@ -1,0 +1,479 @@
+---
+description: How to make Sunburst Charts.
+display_as: basic
+has_thumbnail: True
+ipynb: ~notebook_demo/274/
+language: python
+layout: base
+name: Sunburst Charts
+order: 6.1
+page_type: u-guide
+permalink: python/sunburst-charts/
+thumbnail: thumbnail/sunburst.gif
+---
+
+{% raw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.js"></script>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Basic-Sunburst-Plot">Basic Sunburst Plot<a class="anchor-link" href="#Basic-Sunburst-Plot">&#182;</a></h3><p>Sunburst plot visualizes hierarchical data spanning outwards radially from root to leaves. The sunburst sectors are determined by the entries in "labels" and in "parents". The root starts from the center and children are added to the outer rings.</p>
+<p>Main arguments:</p>
+<ol>
+<li><strong>labels</strong>: sets the labels of sunburst sectors.</li>
+<li><strong>parents</strong>: sets the parent sectors of sunburst sectors. An empty string '' is used for the root node in the hierarchy. In this example, the root is "Eve".</li>
+<li><strong>values</strong>: sets the values associated with sunburst sectors, determining their width (See the "Branchvalues" section below for different modes for setting the width).</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sunburst plots visualize hierarchical data spanning outwards radially from root to leaves. The sunburst sector hierarchy is determined by the entries in <code>labels</code> and in <code>parents</code>. The root starts from the center and children are added to the outer rings.</p>
+<p>Main arguments:</p>
+<ol>
+<li><code>labels</code>: sets the labels of sunburst sectors.</li>
+<li><code>parents</code>: sets the parent sectors of sunburst sectors. An empty string <code>''</code> is used for the root node in the hierarchy. In this example, the root is "Eve".</li>
+<li><code>values</code>: sets the values associated with sunburst sectors, determining their width (See the <code>branchvalues</code> section below for different modes for setting the width).</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sunburst</span><span class="p">(</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Cain&quot;</span><span class="p">,</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Enos&quot;</span><span class="p">,</span> <span class="s2">&quot;Noam&quot;</span><span class="p">,</span> <span class="s2">&quot;Abel&quot;</span><span class="p">,</span> <span class="s2">&quot;Awan&quot;</span><span class="p">,</span> <span class="s2">&quot;Enoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Azura&quot;</span><span class="p">],</span>
+    <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Awan&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span> <span class="p">],</span>
+    <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+<span class="p">))</span>
+<span class="c1"># Update layout for tight margin</span>
+<span class="c1"># See https://plot.ly/python/creating-and-updating-figures/</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="1aef2714-0821-4f91-973f-61f493349fbe" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("1aef2714-0821-4f91-973f-61f493349fbe")) {
+                    Plotly.newPlot(
+                        '1aef2714-0821-4f91-973f-61f493349fbe',
+                        [{"labels": ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"], "parents": ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"], "type": "sunburst", "values": [10, 14, 12, 10, 2, 6, 6, 4, 4]}],
+                        {"margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('1aef2714-0821-4f91-973f-61f493349fbe');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sunburst-with-Repeated-Labels">Sunburst with Repeated Labels<a class="anchor-link" href="#Sunburst-with-Repeated-Labels">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sunburst</span><span class="p">(</span>
+ <span class="n">ids</span><span class="o">=</span><span class="p">[</span>
+    <span class="s2">&quot;North America&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;North America - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Soccer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;North America - Rugby&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Europe - American Football&quot;</span><span class="p">,</span><span class="s2">&quot;Australia - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Association&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australian Rules&quot;</span><span class="p">,</span> <span class="s2">&quot;Autstralia - American Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia - Rugby&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Rugby League&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby Union&quot;</span>
+  <span class="p">],</span>
+  <span class="n">labels</span><span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;North&lt;br&gt;America&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Soccer&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby&quot;</span><span class="p">,</span> <span class="s2">&quot;American&lt;br&gt;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Association&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australian&lt;br&gt;Rules&quot;</span><span class="p">,</span> <span class="s2">&quot;American&lt;br&gt;Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby&quot;</span><span class="p">,</span> <span class="s2">&quot;Rugby&lt;br&gt;League&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Rugby&lt;br&gt;Union&quot;</span>
+  <span class="p">],</span>
+  <span class="n">parents</span><span class="o">=</span><span class="p">[</span>
+    <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;North America&quot;</span><span class="p">,</span> <span class="s2">&quot;North America&quot;</span><span class="p">,</span> <span class="s2">&quot;North America&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia - Football&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australia - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia - Football&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia - Rugby&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australia - Rugby&quot;</span>
+  <span class="p">],</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="05e01085-a692-4493-906d-fcf17452a81f" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("05e01085-a692-4493-906d-fcf17452a81f")) {
+                    Plotly.newPlot(
+                        '05e01085-a692-4493-906d-fcf17452a81f',
+                        [{"ids": ["North America", "Europe", "Australia", "North America - Football", "Soccer", "North America - Rugby", "Europe - Football", "Rugby", "Europe - American Football", "Australia - Football", "Association", "Australian Rules", "Autstralia - American Football", "Australia - Rugby", "Rugby League", "Rugby Union"], "labels": ["North<br>America", "Europe", "Australia", "Football", "Soccer", "Rugby", "Football", "Rugby", "American<br>Football", "Football", "Association", "Australian<br>Rules", "American<br>Football", "Rugby", "Rugby<br>League", "Rugby<br>Union"], "parents": ["", "", "", "North America", "North America", "North America", "Europe", "Europe", "Europe", "Australia", "Australia - Football", "Australia - Football", "Australia - Football", "Australia - Football", "Australia - Rugby", "Australia - Rugby"], "type": "sunburst"}],
+                        {"margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('05e01085-a692-4493-906d-fcf17452a81f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Branchvalues">Branchvalues<a class="anchor-link" href="#Branchvalues">&#182;</a></h3><p>With branchvalues "total", the value of the parent represents the width of its wedge. In the example below, "Enoch" is 4 and "Awan" is 6 and so Enoch's width is 4/6ths of Awans. With branchvalues "remainder", the parent's width is determined by its own value plus those of its children. So, Enoch's width is 4/10ths of Awan's (4 / (6 + 4)).</p>
+<p>Note that this means that the sum of the values of the children cannot exceed the value of their parent when branchvalues "total". When branchvalues "relative" (the default), children will not take up all of the space below their parent (unless the parent is the root and it has a value of 0).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="n">fig</span> <span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sunburst</span><span class="p">(</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Cain&quot;</span><span class="p">,</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Enos&quot;</span><span class="p">,</span> <span class="s2">&quot;Noam&quot;</span><span class="p">,</span> <span class="s2">&quot;Abel&quot;</span><span class="p">,</span> <span class="s2">&quot;Awan&quot;</span><span class="p">,</span> <span class="s2">&quot;Enoch&quot;</span><span class="p">,</span> <span class="s2">&quot;Azura&quot;</span><span class="p">],</span>
+    <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span>    <span class="s2">&quot;Eve&quot;</span><span class="p">,</span>  <span class="s2">&quot;Eve&quot;</span><span class="p">,</span>  <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span>  <span class="s2">&quot;Eve&quot;</span><span class="p">,</span>  <span class="s2">&quot;Awan&quot;</span><span class="p">,</span>  <span class="s2">&quot;Eve&quot;</span> <span class="p">],</span>
+    <span class="n">values</span><span class="o">=</span><span class="p">[</span>  <span class="mi">65</span><span class="p">,</span>    <span class="mi">14</span><span class="p">,</span>     <span class="mi">12</span><span class="p">,</span>     <span class="mi">10</span><span class="p">,</span>     <span class="mi">2</span><span class="p">,</span>      <span class="mi">6</span><span class="p">,</span>      <span class="mi">6</span><span class="p">,</span>      <span class="mi">4</span><span class="p">,</span>       <span class="mi">4</span><span class="p">],</span>
+    <span class="n">branchvalues</span><span class="o">=</span><span class="s2">&quot;total&quot;</span><span class="p">,</span>
+<span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="fa20c279-a668-40c9-befc-44f7742ae19c" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("fa20c279-a668-40c9-befc-44f7742ae19c")) {
+                    Plotly.newPlot(
+                        'fa20c279-a668-40c9-befc-44f7742ae19c',
+                        [{"branchvalues": "total", "labels": ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"], "parents": ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"], "type": "sunburst", "values": [65, 14, 12, 10, 2, 6, 6, 4, 4]}],
+                        {"margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('fa20c279-a668-40c9-befc-44f7742ae19c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Large-Number-of-Slices">Large Number of Slices<a class="anchor-link" href="#Large-Number-of-Slices">&#182;</a></h3><p>This example uses a <a href="https://plot.ly/python/reference/#layout-grid">plotly grid attribute</a> for the suplots. Reference the row and column destination using the <a href="https://plot.ly/python/reference/#sunburst-domain">domain</a> attribute.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/sunburst-coffee-flavors-complete.csv&#39;</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sunburst</span><span class="p">(</span>
+    <span class="n">ids</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">ids</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+    <span class="n">parents</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">parents</span><span class="p">,</span>
+    <span class="n">domain</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Sunburst</span><span class="p">(</span>
+    <span class="n">ids</span><span class="o">=</span><span class="n">df2</span><span class="o">.</span><span class="n">ids</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">df2</span><span class="o">.</span><span class="n">labels</span><span class="p">,</span>
+    <span class="n">parents</span><span class="o">=</span><span class="n">df2</span><span class="o">.</span><span class="n">parents</span><span class="p">,</span>
+    <span class="n">domain</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">maxdepth</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">grid</span><span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div>
+        
+        
+            <div id="03243ae0-2e47-4761-97e3-25f16d432110" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("03243ae0-2e47-4761-97e3-25f16d432110")) {
+                    Plotly.newPlot(
+                        '03243ae0-2e47-4761-97e3-25f16d432110',
+                        [{"domain": {"column": 0}, "ids": ["Aromas", "Tastes", "Aromas-Enzymatic", "Aromas-Sugar Browning", "Aromas-Dry Distillation", "Tastes-Bitter", "Tastes-Salt", "Tastes-Sweet", "Tastes-Sour", "Enzymatic-Flowery", "Enzymatic-Fruity", "Enzymatic-Herby", "Sugar Browning-Nutty", "Sugar Browning-Carmelly", "Sugar Browning-Chocolatey", "Dry Distillation-Resinous", "Dry Distillation-Spicy", "Dry Distillation-Carbony", "Bitter-Pungent", "Bitter-Harsh", "Salt-Sharp", "Salt-Bland", "Sweet-Mellow", "Sweet-Acidy", "Sour-Winey", "Sour-Soury", "Flowery-Floral", "Flowery-Fragrant", "Fruity-Citrus", "Fruity-Berry-like", "Herby-Alliaceous", "Herby-Leguminous", "Nutty-Nut-like", "Nutty-Malt-like", "Carmelly-Candy-like", "Carmelly-Syrup-like", "Chocolatey-Chocolate-like", "Chocolatey-Vanilla-like", "Resinous-Turpeny", "Resinous-Medicinal", "Spicy-Warming", "Spicy-Pungent", "Carbony-Smokey", "Carbony-Ashy", "Pungent-Creosol", "Pungent-Phenolic", "Harsh-Caustic", "Harsh-Alkaline", "Sharp-Astringent", "Sharp-Rough", "Bland-Neutral", "Bland-Soft", "Mellow-Delicate", "Mellow-Mild", "Acidy-Nippy", "Acidy-Piquant", "Winey-Tangy", "Winey-Tart", "Soury-Hard", "Soury-Acrid", "Floral-Coffee Blossom", "Floral-Tea Rose", "Fragrant-Cardamon Caraway", "Fragrant-Coriander Seeds", "Citrus-Lemon", "Citrus-Apple", "Berry-like-Apricot", "Berry-like-Blackberry", "Alliaceous-Onion", "Alliaceous-Garlic", "Leguminous-Cucumber", "Leguminous-Garden Peas", "Nut-like-Roasted Peanuts", "Nut-like-Walnuts", "Malt-like-Balsamic Rice", "Malt-like-Toast", "Candy-like-Roasted Hazelnut", "Candy-like-Roasted Almond", "Syrup-like-Honey", "Syrup-like-Maple Syrup", "Chocolate-like-Bakers", "Chocolate-like-Dark Chocolate", "Vanilla-like-Swiss", "Vanilla-like-Butter", "Turpeny-Piney", "Turpeny-Blackcurrant-like", "Medicinal-Camphoric", "Medicinal-Cineolic", "Warming-Cedar", "Warming-Pepper", "Pungent-Clove", "Pungent-Thyme", "Smokey-Tarry", "Smokey-Pipe Tobacco", "Ashy-Burnt", "Ashy-Charred"], "labels": ["Aromas", "Tastes", "Enzymatic", "Sugar Browning", "Dry Distillation", "Bitter", "Salt", "Sweet", "Sour", "Flowery", "Fruity", "Herby", "Nutty", "Carmelly", "Chocolatey", "Resinous", "Spicy", "Carbony", "Pungent", "Harsh", "Sharp", "Bland", "Mellow", "Acidy", "Winey", "Soury", "Floral", "Fragrant", "Citrus", "Berry-like", "Alliaceous", "Leguminous", "Nut-like", "Malt-like", "Candy-like", "Syrup-like", "Chocolate-like", "Vanilla-like", "Turpeny", "Medicinal", "Warming", "Pungent", "Smokey", "Ashy", "Creosol", "Phenolic", "Caustic", "Alkaline", "Astringent", "Rough", "Neutral", "Soft", "Delicate", "Mild", "Nippy", "Piquant", "Tangy", "Tart", "Hard", "Acrid", "Coffee Blossom", "Tea Rose", "Cardamon Caraway", "Coriander Seeds", "Lemon", "Apple", "Apricot", "Blackberry", "Onion", "Garlic", "Cucumber", "Garden Peas", "Roasted Peanuts", "Walnuts", "Balsamic Rice", "Toast", "Roasted Hazelnut", "Roasted Almond", "Honey", "Maple Syrup", "Bakers", "Dark Chocolate", "Swiss", "Butter", "Piney", "Blackcurrant-like", "Camphoric", "Cineolic", "Cedar", "Pepper", "Clove", "Thyme", "Tarry", "Pipe Tobacco", "Burnt", "Charred"], "parents": [null, null, "Aromas", "Aromas", "Aromas", "Tastes", "Tastes", "Tastes", "Tastes", "Aromas-Enzymatic", "Aromas-Enzymatic", "Aromas-Enzymatic", "Aromas-Sugar Browning", "Aromas-Sugar Browning", "Aromas-Sugar Browning", "Aromas-Dry Distillation", "Aromas-Dry Distillation", "Aromas-Dry Distillation", "Tastes-Bitter", "Tastes-Bitter", "Tastes-Salt", "Tastes-Salt", "Tastes-Sweet", "Tastes-Sweet", "Tastes-Sour", "Tastes-Sour", "Enzymatic-Flowery", "Enzymatic-Flowery", "Enzymatic-Fruity", "Enzymatic-Fruity", "Enzymatic-Herby", "Enzymatic-Herby", "Sugar Browning-Nutty", "Sugar Browning-Nutty", "Sugar Browning-Carmelly", "Sugar Browning-Carmelly", "Sugar Browning-Chocolatey", "Sugar Browning-Chocolatey", "Dry Distillation-Resinous", "Dry Distillation-Resinous", "Dry Distillation-Spicy", "Dry Distillation-Spicy", "Dry Distillation-Carbony", "Dry Distillation-Carbony", "Bitter-Pungent", "Bitter-Pungent", "Bitter-Harsh", "Bitter-Harsh", "Salt-Sharp", "Salt-Sharp", "Salt-Bland", "Salt-Bland", "Sweet-Mellow", "Sweet-Mellow", "Sweet-Acidy", "Sweet-Acidy", "Sour-Winey", "Sour-Winey", "Sour-Soury", "Sour-Soury", "Flowery-Floral", "Flowery-Floral", "Flowery-Fragrant", "Flowery-Fragrant", "Fruity-Citrus", "Fruity-Citrus", "Fruity-Berry-like", "Fruity-Berry-like", "Herby-Alliaceous", "Herby-Alliaceous", "Herby-Leguminous", "Herby-Leguminous", "Nutty-Nut-like", "Nutty-Nut-like", "Nutty-Malt-like", "Nutty-Malt-like", "Carmelly-Candy-like", "Carmelly-Candy-like", "Carmelly-Syrup-like", "Carmelly-Syrup-like", "Chocolatey-Chocolate-like", "Chocolatey-Chocolate-like", "Chocolatey-Vanilla-like", "Chocolatey-Vanilla-like", "Resinous-Turpeny", "Resinous-Turpeny", "Resinous-Medicinal", "Resinous-Medicinal", "Spicy-Warming", "Spicy-Warming", "Spicy-Pungent", "Spicy-Pungent", "Carbony-Smokey", "Carbony-Smokey", "Carbony-Ashy", "Carbony-Ashy"], "type": "sunburst"}, {"domain": {"column": 1}, "ids": ["Enzymatic-Flowery", "Enzymatic-Fruity", "Enzymatic-Herby", "Sugar Browning-Nutty", "Sugar Browning-Carmelly", "Sugar Browning-Chocolatey", "Dry Distillation-Resinous", "Dry Distillation-Spicy", "Dry Distillation-Carbony", "Bitter-Pungent", "Bitter-Harsh", "Salt-Sharp", "Salt-Bland", "Sweet-Mellow", "Sweet-Acidy", "Sour-Winey", "Sour-Soury", "Flowery-Floral", "Flowery-Fragrant", "Fruity-Citrus", "Fruity-Berry-like", "Herby-Alliaceous", "Herby-Leguminous", "Nutty-Nut-like", "Nutty-Malt-like", "Carmelly-Candy-like", "Carmelly-Syrup-like", "Chocolatey-Chocolate-like", "Chocolatey-Vanilla-like", "Resinous-Turpeny", "Resinous-Medicinal", "Spicy-Warming", "Spicy-Pungent", "Carbony-Smokey", "Carbony-Ashy", "Pungent-Creosol", "Pungent-Phenolic", "Harsh-Caustic", "Harsh-Alkaline", "Sharp-Astringent", "Sharp-Rough", "Bland-Neutral", "Bland-Soft", "Mellow-Delicate", "Mellow-Mild", "Acidy-Nippy", "Acidy-Piquant", "Winey-Tangy", "Winey-Tart", "Soury-Hard", "Soury-Acrid", "Floral-Coffee Blossom", "Floral-Tea Rose", "Fragrant-Cardamon Caraway", "Fragrant-Coriander Seeds", "Citrus-Lemon", "Citrus-Apple", "Berry-like-Apricot", "Berry-like-Blackberry", "Alliaceous-Onion", "Alliaceous-Garlic", "Leguminous-Cucumber", "Leguminous-Garden Peas", "Nut-like-Roasted Peanuts", "Nut-like-Walnuts", "Malt-like-Balsamic Rice", "Malt-like-Toast", "Candy-like-Roasted Hazelnut", "Candy-like-Roasted Almond", "Syrup-like-Honey", "Syrup-like-Maple Syrup", "Chocolate-like-Bakers", "Chocolate-like-Dark Chocolate", "Vanilla-like-Swiss", "Vanilla-like-Butter", "Turpeny-Piney", "Turpeny-Blackcurrant-like", "Medicinal-Camphoric", "Medicinal-Cineolic", "Warming-Cedar", "Warming-Pepper", "Pungent-Clove", "Pungent-Thyme", "Smokey-Tarry", "Smokey-Pipe Tobacco", "Ashy-Burnt", "Ashy-Charred"], "labels": ["Flowery", "Fruity", "Herby", "Nutty", "Carmelly", "Chocolatey", "Resinous", "Spicy", "Carbony", "Pungent", "Harsh", "Sharp", "Bland", "Mellow", "Acidy", "Winey", "Soury", "Floral", "Fragrant", "Citrus", "Berry-like", "Alliaceous", "Leguminous", "Nut-like", "Malt-like", "Candy-like", "Syrup-like", "Chocolate-like", "Vanilla-like", "Turpeny", "Medicinal", "Warming", "Pungent", "Smokey", "Ashy", "Creosol", "Phenolic", "Caustic", "Alkaline", "Astringent", "Rough", "Neutral", "Soft", "Delicate", "Mild", "Nippy", "Piquant", "Tangy", "Tart", "Hard", "Acrid", "Coffee Blossom", "Tea Rose", "Cardamon Caraway", "Coriander Seeds", "Lemon", "Apple", "Apricot", "Blackberry", "Onion", "Garlic", "Cucumber", "Garden Peas", "Roasted Peanuts", "Walnuts", "Balsamic Rice", "Toast", "Roasted Hazelnut", "Roasted Almond", "Honey", "Maple Syrup", "Bakers", "Dark Chocolate", "Swiss", "Butter", "Piney", "Blackcurrant-like", "Camphoric", "Cineolic", "Cedar", "Pepper", "Clove", "Thyme", "Tarry", "Pipe Tobacco", "Burnt", "Charred"], "maxdepth": 2, "parents": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "Enzymatic-Flowery", "Enzymatic-Flowery", "Enzymatic-Fruity", "Enzymatic-Fruity", "Enzymatic-Herby", "Enzymatic-Herby", "Sugar Browning-Nutty", "Sugar Browning-Nutty", "Sugar Browning-Carmelly", "Sugar Browning-Carmelly", "Sugar Browning-Chocolatey", "Sugar Browning-Chocolatey", "Dry Distillation-Resinous", "Dry Distillation-Resinous", "Dry Distillation-Spicy", "Dry Distillation-Spicy", "Dry Distillation-Carbony", "Dry Distillation-Carbony", "Bitter-Pungent", "Bitter-Pungent", "Bitter-Harsh", "Bitter-Harsh", "Salt-Sharp", "Salt-Sharp", "Salt-Bland", "Salt-Bland", "Sweet-Mellow", "Sweet-Mellow", "Sweet-Acidy", "Sweet-Acidy", "Sour-Winey", "Sour-Winey", "Sour-Soury", "Sour-Soury", "Flowery-Floral", "Flowery-Floral", "Flowery-Fragrant", "Flowery-Fragrant", "Fruity-Citrus", "Fruity-Citrus", "Fruity-Berry-like", "Fruity-Berry-like", "Herby-Alliaceous", "Herby-Alliaceous", "Herby-Leguminous", "Herby-Leguminous", "Nutty-Nut-like", "Nutty-Nut-like", "Nutty-Malt-like", "Nutty-Malt-like", "Carmelly-Candy-like", "Carmelly-Candy-like", "Carmelly-Syrup-like", "Carmelly-Syrup-like", "Chocolatey-Chocolate-like", "Chocolatey-Chocolate-like", "Chocolatey-Vanilla-like", "Chocolatey-Vanilla-like", "Resinous-Turpeny", "Resinous-Turpeny", "Resinous-Medicinal", "Resinous-Medicinal", "Spicy-Warming", "Spicy-Warming", "Spicy-Pungent", "Spicy-Pungent", "Carbony-Smokey", "Carbony-Smokey", "Carbony-Ashy", "Carbony-Ashy"], "type": "sunburst"}],
+                        {"grid": {"columns": 2, "rows": 1}, "margin": {"b": 0, "l": 0, "r": 0, "t": 0}, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"responsive": true}
+                    ).then(function(){
+                            
+var gd = document.getElementById('03243ae0-2e47-4761-97e3-25f16d432110');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h4><p>See <a href="https://plot.ly/python/reference/#sunburst">https://plot.ly/python/reference/#sunburst</a> for more information and chart attribute options!</p>
+
+</div>
+</div>
+</div>
+
+ 
+
+
+{% endraw %}
