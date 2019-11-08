@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -32,8 +32,8 @@ jupyter:
     name: Colorscales
     order: 22
     permalink: python/colorscales/
-    thumbnail: thumbnail/heatmap_colorscale.jpg
     redirect_from: python/logarithmic-color-scale/
+    thumbnail: thumbnail/heatmap_colorscale.jpg
     v4upgrade: true
 ---
 

@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -33,9 +33,9 @@ jupyter:
     order: 14
     page_type: u-guide
     permalink: python/network-graphs/
-    redirect_from: 
-      - ipython-notebooks/networks/
-      - ipython-notebooks/network-graphs/
+    redirect_from:
+    - ipython-notebooks/networks/
+    - ipython-notebooks/network-graphs/
     thumbnail: thumbnail/net.jpg
     v4upgrade: true
 ---

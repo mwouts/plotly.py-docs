@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -22,8 +22,7 @@ jupyter:
     pygments_lexer: ipython3
     version: 3.6.7
   plotly:
-    description: How to make a Mapbox Density Heatmap in Python
-      with Plotly.
+    description: How to make a Mapbox Density Heatmap in Python with Plotly.
     display_as: maps
     has_thumbnail: true
     ipynb: ~notebook_demo/56

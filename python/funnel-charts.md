@@ -4,26 +4,12 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
     name: python3
-  plotly:
-    permalink: python/funnel-charts/
-    redirect_from: python/funnel-chart/
-    description: How to make funnel-chart plots in Python with Plotly.
-    name: Funnel Chart
-    thumbnail: thumbnail/funnel.jpg
-    
-    has_thumbnail: true
-    language: python
-    display_as: financial
-    order: 4
-    ipynb: ~notebook_demo/293
-    layout: base
-    page_type: example_index
 ---
 
 

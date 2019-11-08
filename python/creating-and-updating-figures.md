@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.6
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -31,8 +31,8 @@ jupyter:
     page_type: example_index
     permalink: python/creating-and-updating-figures/
     redirect_from:
-      - python/user-guide/
-      - python/user-g/
+    - python/user-guide/
+    - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
     v4upgrade: true
 ---

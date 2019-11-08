@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -49,10 +49,10 @@ Run the following commands to install the correct versions of the following modu
 
 If you are using Windows, follow this post to properly install geopandas and dependencies: http://geoffboeing.com/2014/09/using-geopandas-windows/. If you are using Anaconda, do not use PIP to install the packages above. Instead use conda to install them:
 
-```
+<!-- #raw -->
 conda install plotly
 conda install geopandas
-```
+<!-- #endraw -->
 
 #### FIPS and Values
 Every US state and county has an assined ID regulated by the US Federal Government under the term FIPS (Federal Information Processing Standards) codes. There are state codes and county codes: the 2016 state and county FIPS codes can be found at the [US Census Website](https://www.census.gov/geographies/reference-files/2016/demo/popest/2016-fips.html).

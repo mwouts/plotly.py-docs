@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.6
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc1
   kernelspec:
     display_name: Python 3
     language: python
@@ -23,16 +23,16 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Displaying Figures from Python
-    v4upgrade: true
     display_as: file_settings
     has_thumbnail: true
     language: python
+    layout: base
     name: Displaying Figures
     page_type: example_index
-    layout: base
     permalink: python/renderers/
     redirect_from: python/offline/
     thumbnail: thumbnail/displaying-figures.png
+    v4upgrade: true
 ---
 
 ### Displaying plotly figures
