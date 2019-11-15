@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.6
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
@@ -23,14 +23,14 @@ jupyter:
     version: 3.7.3
   plotly:
     description: Theming and templates with plotly with Python
-    language: python
     display_as: file_settings
-    name: Theming and templates
-    page_type: u-guide
+    language: python
     layout: base
+    name: Theming and templates
+    order: 7
+    page_type: u-guide
     permalink: python/templates/
     thumbnail: thumbnail/theming-and-templates.png
-    order: 7
 ---
 
 ### Theming and templates

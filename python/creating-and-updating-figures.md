@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
@@ -27,6 +27,7 @@ jupyter:
     language: python
     layout: base
     name: Creating and Updating Figures
+    order: 2
     page_type: example_index
     permalink: python/creating-and-updating-figures/
     redirect_from:
@@ -34,7 +35,6 @@ jupyter:
     - python/user-g/
     thumbnail: thumbnail/creating-and-updating-figures.png
     v4upgrade: true
-    order: 2
 ---
 
 ### Representing Figures

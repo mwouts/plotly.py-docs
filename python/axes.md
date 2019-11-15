@@ -5,8 +5,8 @@ jupyter:
     text_representation:
       extension: .md
       format_name: markdown
-      format_version: '1.1'
-      jupytext_version: 1.1.6
+      format_version: '1.2'
+      jupytext_version: 1.3.0rc2
   kernelspec:
     display_name: Python 3
     language: python
@@ -23,8 +23,8 @@ jupyter:
     version: 3.7.3
   plotly:
     description: How to adjust axes properties in python. Includes examples of linear
-      and logarithmic axes, axes titles, styling and coloring axes and grid lines, and
-      more.
+      and logarithmic axes, axes titles, styling and coloring axes and grid lines,
+      and more.
     display_as: file_settings
     language: python
     layout: base
